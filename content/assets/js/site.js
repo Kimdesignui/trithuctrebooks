@@ -77,6 +77,69 @@ Array.prototype.remove = function (el) {
     return this;
 };
 
+var TTB_SHARED_COMBO_BOOKS = [
+    ['Combo Inako - Chiêu Thành, Chiêu Thành - Tokyo, hoa, nắng và anh ...', 'Picture/Combo-books/1.jpg', '1.031.200đ'],
+    ['Combo Thần Thoại Ai Cập + Bắc Âu + Hy Lạp + Từ Điển Thần Thoại Hy Lạp -...', 'Picture/Combo-books/2.jpg', '239.200đ'],
+    ['Combo Vì tình yêu Hà Nội (For the love of Hanoi) + postcard', 'Picture/Combo-books/3.jpg', '189.000đ'],
+    ['Combo dã sử: Con voi thành Phật Thệ + Ngự tiền quan án + Trần triều nhân tho...', 'Picture/Combo-books/4.jpg', '179.100đ']
+];
+
+function ttbSharedComboCard(item, index) {
+    var typeList = [
+        ['book-type-audio', 'bi-volume-up-fill', 'Audio'],
+        ['book-type-ebook', 'bi-phone-vibrate', 'Ebook'],
+        ['book-type-print', 'bi-book', 'Sách in'],
+        ['book-type-ebook', 'bi-phone-vibrate', 'Ebook']
+    ];
+    var type = typeList[index % typeList.length];
+    return [
+        '<a href="tuyen-tap-hay-nhat.html" title="' + item[0] + '">',
+        '<div class="collection-slider_item">',
+        '<div class="item-img ttb-book-visual">',
+        '<img src="' + item[1] + '" alt="' + item[0] + '" loading="lazy">',
+        '<span class="book-type ' + type[0] + ' ttb-book-type-tag" aria-label="Loại sách: ' + type[2] + '"><i class="bi ' + type[1] + '" aria-hidden="true"></i><span>' + type[2] + '</span></span>',
+        index < 3 ? '<span class="ttb-sale-badge">Hot<br>sale</span>' : '',
+        '</div>',
+        '<div class="item-content">',
+        '<h6 class="item-content_title h6-14 medium mb-0"><span>' + item[0] + '</span></h6>',
+        '<div class="item_infor-vote" aria-label="Đánh giá 5 sao"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>',
+        '<div class="item-content_price"><span>' + item[2] + '</span></div>',
+        '</div></div></a>'
+    ].join('');
+}
+
+function ttbNormalizeSharedComboSections() {
+    document.querySelectorAll('.collection-heading h3, .book_content-title h3').forEach(function (heading) {
+        var title = heading.textContent.trim().toUpperCase();
+        if (title !== 'TUYỂN TẬP SÁCH HAY' && title !== 'COMBO SÁCH HAY') return;
+
+        heading.textContent = 'COMBO SÁCH HAY';
+        var sectionRoot = heading.closest('.collection-book, .book_content');
+        if (!sectionRoot) return;
+
+        sectionRoot.querySelectorAll('a[href]').forEach(function (link) {
+            if (/xem|toàn|toan/i.test(link.textContent) || link.classList.contains('content_title-view')) {
+                link.setAttribute('href', 'tuyen-tap-hay-nhat.html');
+            }
+        });
+
+        var carousel = sectionRoot.querySelector('.owl-carousel');
+        if (carousel) {
+            carousel.classList.add('book-carousel-4');
+            carousel.innerHTML = TTB_SHARED_COMBO_BOOKS.map(ttbSharedComboCard).join('');
+        }
+
+        var list = sectionRoot.querySelector('.listproduct');
+        if (list) {
+            list.innerHTML = TTB_SHARED_COMBO_BOOKS.map(function (item, index) {
+                return '<li><div class="content_item position-relative">' + ttbSharedComboCard(item, index) + '</div></li>';
+            }).join('');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', ttbNormalizeSharedComboSections);
+
 document.addEventListener('DOMContentLoaded', function () {
     if (!/trang-chi-tiet-sach\.html$/i.test(window.location.pathname)) return;
 
@@ -125,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     menuItems.forEach(function (entry) {
         document.querySelectorAll('[data-submenu-id="' + entry[0] + '"] .category_link').forEach(function (link) {
-            link.href = 'tat-ca-sach.html';
+            link.setAttribute('href', 'tat-ca-sach.html');
             link.title = entry[1];
             var span = link.querySelector('span');
             if (span) {
@@ -143,6 +206,8 @@ document.addEventListener('DOMContentLoaded', function () {
         link.href = 'tat-ca-danh-muc.html';
         link.lastChild.textContent = 'Xem toàn bộ danh mục';
     });
+
+    if (!/trang-chi-tiet-sach\.html$/i.test(window.location.pathname)) return;
 
     var detail = document.querySelector('.section-chi-tiet-sach');
     if (!detail) return;
@@ -228,8 +293,8 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="ttb-detail-stats"><span><strong>52358</strong> Lượt xem</span><span><strong>3639</strong> Đã bán</span><span>Chia sẻ <i class="far fa-share-alt"></i></span></div>',
         '<div class="ttb-detail-buybox"><h2>Chọn sản phẩm</h2>',
         '<label class="ttb-detail-option active"><span><i class="far fa-book"></i>Sách giấy</span><span class="ttb-detail-qty"><button type="button">−</button><em>1</em><button type="button">+</button></span><strong>146.000đ</strong><input type="checkbox" checked aria-label="Chọn sách giấy"></label>',
-        '<label class="ttb-detail-option"><span><i class="far fa-mobile-alt"></i>Ebook</span><select aria-label="Thời hạn ebook"><option>Vĩnh viễn</option></select><strong>146.000đ</strong><input type="checkbox" aria-label="Chọn ebook"></label>',
-        '<label class="ttb-detail-option"><span><i class="far fa-volume-up"></i>Audio book</span><select aria-label="Thời hạn audio"><option>Vĩnh viễn</option></select><strong>146.000đ</strong><input type="checkbox" aria-label="Chọn audio book"></label>',
+        '<label class="ttb-detail-option"><span><i class="far fa-mobile-alt"></i>Ebook</span><select aria-label="Thời hạn ebook"><option>1 năm</option><option>2 năm</option><option>Vô thời hạn</option></select><strong>146.000đ</strong><input type="checkbox" aria-label="Chọn ebook"></label>',
+        '<label class="ttb-detail-option"><span><i class="far fa-volume-up"></i>Audio book</span><select aria-label="Thời hạn audio"><option>1 năm</option><option>2 năm</option><option>Vô thời hạn</option></select><strong>146.000đ</strong><input type="checkbox" aria-label="Chọn audio book"></label>',
         '<div class="ttb-detail-total"><span>Thành tiền</span><strong>146.000đ</strong></div><div class="ttb-detail-actions"><a class="ttb-detail-buy-now" href="checkout-cart.html">Mua ngay</a><a class="ttb-detail-add-cart" href="checkout-cart.html"><i class="far fa-shopping-basket"></i>Thêm vào giỏ</a></div>',
         '<div class="ttb-detail-promo"><i class="far fa-badge-percent"></i>Hình thức: Bìa cứng áo ôm kèm chữ ký & triện tác giả, postcard, bookmark.</div>',
         '</div></div></div>',
@@ -240,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="ttb-detail-card ttb-detail-description"><div class="ttb-detail-tabs" role="tablist" aria-label="Thông tin sách"><button class="active" type="button" role="tab" aria-selected="true" data-detail-tab="intro">GIỚI THIỆU</button><button type="button" role="tab" aria-selected="false" data-detail-tab="toc">MỤC LỤC</button></div><div class="ttb-detail-tab-panel active" data-detail-panel="intro"><h3>NỘI DUNG SÁCH</h3><p>Tri Thức Trẻ Books trân trọng giới thiệu đến bạn đọc cuốn sách <strong>“Cố nhân tình”.</strong> Cuốn sách gồm năm truyện ngắn - năm mối duyên nợ dở dang trong những trang sử đã ngả màu năm tháng.</p><p>Là chiếc khăn trầu kết nghĩa phu thê, cũng là bước đệm cho cuộc chuyển giao quyền lực. Là bóng trăng vỡ tan, chứng minh tiết hạnh của nàng công chúa. Là chuyến du hành thời gian đã cứu rỗi một linh hồn bạo quân. Là nỗi suy tư nơi cung cấm xa xăm, giữa chuyện trăm năm và lòng mộ Phật.</p><p>Cố nhân tình là một tập truyện ngắn chạm đến tim người đọc bằng những lát cắt riêng, nơi lịch sử làm nền, con người là trung tâm và nghĩa - tình là sợi chỉ đỏ xuyên suốt.</p><h3>GIỚI THIỆU TÁC GIẢ</h3><p><strong>Tác giả Việt Chi</strong> (tên thật Nguyễn Hà Việt Chi, sinh năm 1999) là một cây bút trẻ hiện đang sinh sống và làm việc tại Hà Nội. Cô được biết đến là một tác giả tâm huyết với văn học và văn hóa Việt, đặc biệt là thể loại văn học lấy cảm hứng lịch sử.</p><a class="ttb-detail-collapse" href="trang-chi-tiet-sach.html">Thu gọn</a></div><div class="ttb-detail-tab-panel" data-detail-panel="toc"><h3>MỤC LỤC SÁCH</h3><div class="ttb-detail-toc-table" role="table" aria-label="Mục lục sách Cố nhân tình"><div role="row"><span role="columnheader">Phần</span><span role="columnheader">Tên mục</span><span role="columnheader">Trang</span></div><div role="row"><span>01</span><strong>Lời mở đầu</strong><em>05</em></div><div role="row"><span>02</span><strong>Khăn trầu kết nghĩa</strong><em>17</em></div><div role="row"><span>03</span><strong>Bóng trăng trong cung cấm</strong><em>63</em></div><div role="row"><span>04</span><strong>Một chuyến du hành qua sử cũ</strong><em>109</em></div><div role="row"><span>05</span><strong>Cố nhân tình</strong><em>161</em></div><div role="row"><span>06</span><strong>Phụ lục và ghi chú tác giả</strong><em>197</em></div></div></div></div>',
         '<div class="ttb-detail-card ttb-detail-comments"><h2>BÌNH LUẬN</h2><div class="ttb-detail-comment-line"><div class="ttb-detail-comment-author"><img src="Picture/logo-short.svg" alt=""><strong>Tiến</strong></div><p>Sách này còn sách giấy không Ad ơi?</p><a href="customer-login.html">Trả lời</a><span>23 giờ trước</span></div><div class="ttb-detail-reply"><div class="ttb-detail-comment-author"><img src="Picture/logo-short.svg" alt=""><strong>Thanh Luân <em>Quản trị viên</em></strong></div><p>Chào bạn! Hiện tại sách này đã hết phiên bản sách giấy, sẽ báo lại ngay khi có hàng bạn nhé. Xin cảm ơn bạn.</p><span>23 giờ trước</span></div><textarea placeholder="Mời bạn để lại bình luận..."></textarea><button type="button">Gửi bình luận</button></div>',
         '</div>',
-        '<aside class="col-lg-3 ttb-detail-sidebar"><div class="ttb-detail-side-card"><h3><i class="far fa-bookmark"></i>Sách mua nhiều</h3>' + sameTopicBooks.map(sideItem).join('') + '<a class="ttb-detail-side-more" href="tat-ca-sach.html">Xem toàn bộ ›</a></div><div class="ttb-detail-side-card"><h3><i class="far fa-bookmark"></i>Sách xem nhiều</h3>' + sameTopicBooks.slice().reverse().map(sideItem).join('') + '<a class="ttb-detail-side-more" href="tat-ca-sach.html">Xem toàn bộ ›</a></div></aside>',
+        '<aside class="col-lg-3 ttb-detail-sidebar"><div class="ttb-detail-side-card"><h3><i class="far fa-bookmark"></i>Sách mua nhiều</h3>' + sameTopicBooks.slice(0, 5).map(sideItem).join('') + '<a class="ttb-detail-side-more" href="tat-ca-sach.html">Xem toàn bộ ›</a></div><div class="ttb-detail-side-card"><h3><i class="far fa-bookmark"></i>Sách xem nhiều</h3>' + sameTopicBooks.slice().reverse().slice(0, 5).map(sideItem).join('') + '<a class="ttb-detail-side-more" href="tat-ca-sach.html">Xem toàn bộ ›</a></div></aside>',
         '</div></div>',
         '<div class="ttb-author-modal" id="ttb-detail-author-modal" aria-hidden="true">',
         '<div class="ttb-author-modal-backdrop" data-author-modal-close></div>',
@@ -731,6 +796,173 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    if (!/bo-pham-cach-3-cuon-c47\.html$/i.test(window.location.pathname)) return;
+
+    var comboBuybox = document.querySelector('.ttb-combo-detail-page .ttb-detail-buybox');
+    if (comboBuybox) {
+        var comboBuyboxHeading = comboBuybox.querySelector('h2');
+        if (comboBuyboxHeading) comboBuyboxHeading.textContent = 'Chọn sản phẩm';
+        comboBuybox.querySelectorAll('.ttb-detail-option').forEach(function (option) {
+            option.remove();
+        });
+        comboBuybox.classList.add('ttb-combo-buybox-simple');
+    }
+
+    var coverButton = document.querySelector('.ttb-combo-detail-page .ttb-detail-cover-open');
+    var coverImage = coverButton?.querySelector('img');
+    var thumbs = Array.from(document.querySelectorAll('.ttb-combo-detail-page .ttb-detail-thumbs img'));
+    var audioPreviewModal = document.querySelector('.ttb-audio-preview-modal');
+    var audioPreviewOpeners = Array.from(document.querySelectorAll('.ttb-combo-detail-page .ttb-detail-listen'));
+    var audioPreviewPlayer = document.querySelector('.ttb-audio-preview-player');
+    var lastAudioPreviewTrigger = null;
+    var currentGalleryIndex = 0;
+    var galleryImages = thumbs.map(function (thumb) {
+        return {
+            src: thumb.getAttribute('data-full') || thumb.src,
+            alt: thumb.alt || 'Ảnh combo sách'
+        };
+    });
+
+    document.body.insertAdjacentHTML('beforeend', [
+        '<div class="ttb-gallery-lightbox ttb-combo-gallery-lightbox" aria-hidden="true">',
+        '<div class="ttb-gallery-lightbox-backdrop" data-combo-gallery-close></div>',
+        '<section class="ttb-gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Thư viện ảnh combo sách">',
+        '<button class="ttb-gallery-close" type="button" aria-label="Đóng thư viện ảnh" data-combo-gallery-close><i class="far fa-times"></i></button>',
+        '<button class="ttb-gallery-nav ttb-gallery-prev" type="button" aria-label="Ảnh trước"><i class="far fa-chevron-left"></i></button>',
+        '<figure><img src="" alt=""><figcaption></figcaption></figure>',
+        '<button class="ttb-gallery-nav ttb-gallery-next" type="button" aria-label="Ảnh sau"><i class="far fa-chevron-right"></i></button>',
+        '<div class="ttb-gallery-strip"></div>',
+        '</section>',
+        '</div>'
+    ].join(''));
+
+    var galleryLightbox = document.querySelector('.ttb-combo-gallery-lightbox');
+    var galleryLightboxImage = galleryLightbox?.querySelector('figure img');
+    var galleryLightboxCaption = galleryLightbox?.querySelector('figcaption');
+    var galleryStrip = galleryLightbox?.querySelector('.ttb-gallery-strip');
+
+    function renderGallery() {
+        var image = galleryImages[currentGalleryIndex];
+        if (!image) return;
+        if (galleryLightboxImage) {
+            galleryLightboxImage.src = image.src;
+            galleryLightboxImage.alt = image.alt;
+        }
+        if (galleryLightboxCaption) {
+            galleryLightboxCaption.textContent = image.alt + ' · ' + (currentGalleryIndex + 1) + '/' + galleryImages.length;
+        }
+        galleryStrip?.querySelectorAll('button').forEach(function (button, index) {
+            button.classList.toggle('active', index === currentGalleryIndex);
+        });
+    }
+
+    galleryImages.forEach(function (image, index) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.setAttribute('aria-label', 'Xem ' + image.alt);
+        var imageNode = document.createElement('img');
+        imageNode.src = image.src;
+        imageNode.alt = image.alt;
+        button.appendChild(imageNode);
+        button.addEventListener('click', function () {
+            currentGalleryIndex = index;
+            renderGallery();
+        });
+        galleryStrip?.appendChild(button);
+    });
+
+    function openGallery() {
+        galleryLightbox?.classList.add('is-open');
+        galleryLightbox?.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('ttb-modal-open');
+        renderGallery();
+        galleryLightbox?.querySelector('.ttb-gallery-close')?.focus();
+    }
+
+    function closeGallery() {
+        galleryLightbox?.classList.remove('is-open');
+        galleryLightbox?.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('ttb-modal-open');
+        coverButton?.focus();
+    }
+
+    function moveGallery(offset) {
+        currentGalleryIndex = (currentGalleryIndex + offset + galleryImages.length) % galleryImages.length;
+        renderGallery();
+    }
+
+    thumbs.forEach(function (thumb, index) {
+        thumb.setAttribute('role', 'button');
+        thumb.setAttribute('tabindex', '0');
+        function activateThumb() {
+            currentGalleryIndex = index;
+            thumbs.forEach(function (item) { item.classList.remove('active'); });
+            thumb.classList.add('active');
+            if (coverImage) {
+                coverImage.src = thumb.getAttribute('data-full') || thumb.src;
+                coverImage.alt = thumb.alt || 'Combo sách';
+            }
+        }
+        thumb.addEventListener('click', activateThumb);
+        thumb.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                activateThumb();
+            }
+        });
+    });
+
+    coverButton?.addEventListener('click', openGallery);
+    galleryLightbox?.querySelectorAll('[data-combo-gallery-close]').forEach(function (node) {
+        node.addEventListener('click', closeGallery);
+    });
+    galleryLightbox?.querySelector('.ttb-gallery-prev')?.addEventListener('click', function () {
+        moveGallery(-1);
+    });
+    galleryLightbox?.querySelector('.ttb-gallery-next')?.addEventListener('click', function () {
+        moveGallery(1);
+    });
+
+    function openAudioPreview(event) {
+        lastAudioPreviewTrigger = event?.currentTarget || null;
+        audioPreviewModal?.classList.add('is-open');
+        audioPreviewModal?.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('ttb-modal-open');
+        audioPreviewPlayer?.play().catch(function () {});
+        audioPreviewModal?.querySelector('.ttb-audio-preview-close')?.focus();
+    }
+
+    function closeAudioPreview() {
+        audioPreviewModal?.classList.remove('is-open');
+        audioPreviewModal?.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('ttb-modal-open');
+        if (audioPreviewPlayer) {
+            audioPreviewPlayer.pause();
+            audioPreviewPlayer.currentTime = 0;
+        }
+        lastAudioPreviewTrigger?.focus();
+    }
+
+    audioPreviewOpeners.forEach(function (button) {
+        button.addEventListener('click', openAudioPreview);
+    });
+    audioPreviewModal?.querySelectorAll('[data-audio-preview-close]').forEach(function (node) {
+        node.addEventListener('click', closeAudioPreview);
+    });
+    document.addEventListener('keydown', function (event) {
+        if (galleryLightbox?.classList.contains('is-open')) {
+            if (event.key === 'Escape') closeGallery();
+            if (event.key === 'ArrowLeft') moveGallery(-1);
+            if (event.key === 'ArrowRight') moveGallery(1);
+            return;
+        }
+        if (event.key === 'Escape' && audioPreviewModal?.classList.contains('is-open')) {
+            closeAudioPreview();
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     var sortButton = document.querySelector('.ttb-sort-button');
     if (!sortButton) return;
 
@@ -936,6 +1168,25 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.ttb-footer-follow a, .ttb-footer-marketplaces a').forEach(function (link) {
+        link.setAttribute('href', '#');
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
+    });
+
+    document.querySelectorAll('a[href*="bo-pham-cach-3-cuon-c47.html"]').forEach(function (link) {
+        link.setAttribute('href', 'tuyen-tap-hay-nhat.html');
+    });
+
+    document.querySelectorAll('.main-menu a').forEach(function (link) {
+        var label = (link.textContent || '').replace(/\s+/g, ' ').trim();
+        if (/^(Khuyến đọc|Liên hệ|Tin tức|Giới thiệu)$/i.test(label)) {
+            link.setAttribute('href', 'chi-tiet-tin.html');
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     var newsTarget = 'chi-tiet-tin.html';
 
     document.querySelectorAll('a').forEach(function (link) {
@@ -1009,4 +1260,64 @@ document.addEventListener('DOMContentLoaded', function () {
         cursor.remove();
         cursor = next;
     }
+});
+
+/* Keep the six demo categories on one shared destination.
+   Legacy page scripts can rewrite these href values after DOMContentLoaded,
+   so normalize once more after the complete page load. */
+(function () {
+    var categoryIds = [
+        'sach-moi',
+        'sach-combo-uu-dai',
+        'mot-dong-lich-su',
+        'hieu-nganh-gioi-nghe',
+        'ha-noi-pho-va-nguoi',
+        'sach-dich-sach-xuat-ban'
+    ];
+
+    function normalizeDemoCategoryLinks() {
+        categoryIds.forEach(function (id) {
+            document.querySelectorAll('[data-submenu-id="' + id + '"] .category_link').forEach(function (link) {
+                if (link.getAttribute('href') !== 'tat-ca-sach.html') {
+                    link.setAttribute('href', 'tat-ca-sach.html');
+                }
+            });
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', normalizeDemoCategoryLinks);
+    document.addEventListener('click', function (event) {
+        var link = event.target.closest('[data-submenu-id] .category_link');
+        if (!link) return;
+        var owner = link.closest('[data-submenu-id]');
+        if (!owner || categoryIds.indexOf(owner.getAttribute('data-submenu-id')) === -1) return;
+        link.setAttribute('href', 'tat-ca-sach.html');
+    }, true);
+    window.addEventListener('load', function () {
+        normalizeDemoCategoryLinks();
+        window.setTimeout(normalizeDemoCategoryLinks, 500);
+        window.setTimeout(normalizeDemoCategoryLinks, 1500);
+    });
+
+    var categoryLinkObserver = new MutationObserver(function (mutations) {
+        var shouldNormalize = mutations.some(function (mutation) {
+            return mutation.type === 'childList' || mutation.attributeName === 'href';
+        });
+        if (shouldNormalize) normalizeDemoCategoryLinks();
+    });
+
+    categoryLinkObserver.observe(document.documentElement, {
+        subtree: true,
+        childList: true,
+        attributes: true,
+        attributeFilter: ['href']
+    });
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.ttb-detail-side-card').forEach(function (card) {
+        Array.from(card.querySelectorAll('.ttb-detail-side-item')).slice(5).forEach(function (item) {
+            item.remove();
+        });
+    });
 });
