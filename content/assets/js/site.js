@@ -140,6 +140,227 @@ function ttbNormalizeSharedComboSections() {
 
 document.addEventListener('DOMContentLoaded', ttbNormalizeSharedComboSections);
 
+function ttbInitInjectedCarousels(scope) {
+    var $ = window.jQuery;
+    if (!$ || !$.fn || !$.fn.owlCarousel) return;
+    $(scope || document).find('.book-carousel-4.owl-carousel').each(function () {
+        var $carousel = $(this);
+        if ($carousel.hasClass('owl-loaded')) return;
+        $carousel.owlCarousel({
+            items: 4,
+            margin: 28,
+            nav: true,
+            dots: false,
+            loop: false,
+            responsive: {
+                0: { items: 2, margin: 16 },
+                576: { items: 2, margin: 18 },
+                768: { items: 3, margin: 22 },
+                992: { items: 4, margin: 28 }
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.collection-heading h3, .book_content-title h3').forEach(function (heading) {
+        if (heading.textContent.trim().toUpperCase() !== 'TÁC GIẢ / DỊCH GIẢ') return;
+        var root = heading.closest('section, .container, .collection-book, .book_content') || heading.parentElement;
+        var viewLink = root && root.querySelector('.content_title-view, .book_content-title a, .collection-heading a');
+        if (viewLink) {
+            viewLink.textContent = 'Xem toàn bộ ›';
+            viewLink.setAttribute('href', 'Danh-sach-tac-gia.html');
+        }
+        root.querySelectorAll('img[src*="Picture/tac gia"], img[src*="Picture/tac%20gia"]').forEach(function (img) {
+            var currentLink = img.closest('a');
+            if (currentLink) {
+                currentLink.setAttribute('href', 'chi-tiet-tac-gia.html');
+                return;
+            }
+            var imageLink = document.createElement('a');
+            imageLink.className = 'ttb-author-image-link';
+            imageLink.href = 'chi-tiet-tac-gia.html';
+            imageLink.setAttribute('aria-label', 'Xem chi tiết tác giả');
+            img.parentNode.insertBefore(imageLink, img);
+            imageLink.appendChild(img);
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.collection-heading h3, .book_content-title h3').forEach(function (heading) {
+        if (heading.textContent.trim().toUpperCase() !== 'DANH MỤC TIN') return;
+        var root = heading.closest('section, .container, .collection-book, .book_content') || heading.parentElement;
+        var viewLink = root && root.querySelector('.content_title-view, .book_content-title a, .collection-heading a');
+        if (viewLink) {
+            viewLink.textContent = 'Xem tất cả ›';
+            viewLink.setAttribute('href', 'tin-tuc.html');
+        }
+        if (!root) return;
+        root.querySelectorAll('a').forEach(function (link) {
+            var text = link.textContent.trim();
+            if (/^\d+/.test(text) || /Tin tức chung|Văn hóa đọc|Giới thiệu sách|Thông báo|Hướng dẫn sử dụng/i.test(text)) {
+                link.setAttribute('href', 'tin-tuc.html');
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (!/Danh-sach-tac-gia\.html$/i.test(window.location.pathname)) return;
+
+    var main = document.querySelector('main');
+    if (!main) return;
+
+    document.body.classList.add('ttb-author-index-body');
+    main.className = 'ttb-subpage ttb-author-index-page';
+
+    var authors = [
+        ['Nguyễn Quang Vũ', 'Picture/tac gia/3.png'],
+        ['Đinh Đoàn', 'Picture/tac gia/2.png'],
+        ['Trần Nhật Minh', 'Picture/tac gia/1.png'],
+        ['Miya Châu Anh', 'Picture/tac gia/4.png'],
+        ['Trần Nhật Minh', 'Picture/tac gia/1.png'],
+        ['Nguyễn Quang Vũ', 'Picture/tac gia/3.png'],
+        ['Đinh Đoàn', 'Picture/tac gia/2.png'],
+        ['Đồng Long', 'Picture/tac gia/5.png'],
+        ['Đinh Đoàn', 'Picture/tac gia/2.png'],
+        ['Đồng Long', 'Picture/tac gia/5.png'],
+        ['Miya Châu Anh', 'Picture/tac gia/4.png'],
+        ['Nguyễn Quang Vũ', 'Picture/tac gia/3.png'],
+        ['Miya Châu Anh', 'Picture/tac gia/4.png'],
+        ['Trần Nhật Minh', 'Picture/tac gia/1.png'],
+        ['Đồng Long', 'Picture/tac gia/5.png'],
+        ['Đinh Đoàn', 'Picture/tac gia/2.png'],
+        ['Nguyễn Quang Vũ', 'Picture/tac gia/3.png'],
+        ['Đinh Đoàn', 'Picture/tac gia/2.png'],
+        ['Đồng Long', 'Picture/tac gia/5.png'],
+        ['Trần Nhật Minh', 'Picture/tac gia/1.png']
+    ];
+
+    function authorCard(item) {
+        return [
+            '<a class="ttb-author-index-card" href="chi-tiet-tac-gia.html">',
+            '<img src="' + item[1] + '" alt="' + item[0] + '" loading="lazy">',
+            '<strong>' + item[0] + '</strong>',
+            '<span><i class="far fa-bookmark"></i>156 xuất bản phẩm</span>',
+            '</a>'
+        ].join('');
+    }
+
+    var comboSection = [
+        '<section class="section section-dt ttb-author-index-combo">',
+        '<div class="collection-heading d-flex justify-content-between">',
+        '<h3 class="h3-20 medium mb-0">COMBO SÁCH HAY</h3>',
+        '<a class="content_title-view d-flex align-items-center" href="tuyen-tap-hay-nhat.html">Xem toàn bộ ›</a>',
+        '</div>',
+        '<div class="owl-carousel owl-theme book-carousel-4">',
+        TTB_SHARED_COMBO_BOOKS.map(ttbSharedComboCard).join(''),
+        '</div>',
+        '</section>'
+    ].join('');
+
+    main.innerHTML = [
+        '<div class="category_wrapper-breadcrum"><div class="container"><div class="ttb-demo-breadcrumb">',
+        '<a href="index.html"><i class="fas fa-home"></i></a><span>/</span><span>Danh sách tác giả</span>',
+        '</div></div></div>',
+        '<section class="ttb-author-index-section"><div class="container">',
+        '<div class="ttb-author-index-layout">',
+        '<aside class="ttb-all-books-filter">',
+        '<div class="ttb-filter-heading"><i class="fas fa-filter"></i><span>Bộ lọc tìm kiếm</span></div>',
+        '<div class="ttb-filter-block">',
+        '<div class="ttb-filter-title">Danh mục sách <i class="fas fa-chevron-up"></i></div>',
+        '<label><input type="checkbox"><a href="tat-ca-sach.html">Tên danh mục 1</a></label>',
+        '<label><input type="checkbox"><a href="tat-ca-sach.html">Tên danh mục 2</a></label>',
+        '<label><input type="checkbox"><a href="tat-ca-sach.html">Tên danh mục 3</a></label>',
+        '<label><input type="checkbox"><a href="tat-ca-sach.html">Tên danh mục 4</a></label>',
+        '<label><input type="checkbox"><a href="tat-ca-sach.html">Tên danh mục 5</a></label>',
+        '<a class="ttb-filter-more" href="tat-ca-sach.html">Xem thêm <i class="fas fa-caret-down"></i></a>',
+        '</div>',
+        '<div class="ttb-filter-block">',
+        '<div class="ttb-filter-title">Ngôn ngữ</div>',
+        '<div class="ttb-language-toggle"><button class="active" type="button">Tiếng việt</button><button type="button">Tiếng anh</button></div>',
+        '</div>',
+        '<div class="ttb-filter-block ttb-filter-price">',
+        '<div class="ttb-filter-title">Theo giá sách giấy</div>',
+        '<input type="text" placeholder="Từ: 0">',
+        '<input type="text" placeholder="Đến: 0">',
+        '<button type="button">Lọc</button>',
+        '</div>',
+        '</aside>',
+        '<div class="ttb-author-index-content">',
+        '<div class="ttb-author-index-head">',
+        '<div><h1>Danh sách tác giả</h1><div class="ttb-format-tabs"><a class="active" href="Danh-sach-tac-gia.html">Tất cả</a><a href="Danh-sach-tac-gia.html">Tác giả</a><a href="Danh-sach-tac-gia.html">Dịch giả</a></div></div>',
+        '<div class="ttb-sort-control"><select class="ttb-sort-select" aria-label="Sắp xếp"><option>Sắp xếp</option><option>Mới nhất</option><option>A-Z</option></select></div>',
+        '</div>',
+        '<div class="ttb-author-index-grid">',
+        authors.map(authorCard).join(''),
+        '</div>',
+        '<nav class="ttb-all-books-pagination"><a href="#">‹</a><a href="#">1</a><a href="#">2</a><a class="active" href="#">3</a><span>...</span><a href="#">20</a><a href="#">›</a></nav>',
+        '</div>',
+        '</div>',
+        comboSection,
+        '</div></section>'
+    ].join('');
+
+    ttbNormalizeSharedComboSections();
+    ttbInitInjectedCarousels(main);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (!/tin-tuc\.html$/i.test(window.location.pathname)) return;
+
+    var main = document.querySelector('main');
+    if (!main) return;
+
+    document.body.classList.add('ttb-news-index-body');
+    main.className = 'ttb-subpage ttb-news-index-page';
+
+    var newsItems = [
+        ['Picture/news-demo/news-01.jpg', 'Ra mắt bộ sách “Phan Thuận An với Huế”: khoảng 100 bài viết về Lịch sử; Văn hóa và Cổ tích xứ Huế', 'Sự kiện ra mắt bộ sách “Phan Thuận An với Huế” không chỉ là việc công bố một công trình học thuật mà còn là câu chuyện cảm động về tình yêu sắt son của...', '28 Tháng 04, 2026'],
+        ['Picture/news-demo/news-02.jpg', 'Tọa đàm giới thiệu sách “Người thổi bong bóng lang Kashi”: Khi cái chết được nhìn như một phần của sự sống', 'Chiều ngày 12/04/2026, tại không gian Vị Trịnh Coffee, buổi tọa đàm giới thiệu cuốn sách đã diễn ra trong không khí ấm...', '13 Tháng 04, 2026'],
+        ['Picture/news-demo/news-03.jpg', 'Sách “Lĩnh Nam chích quái” đạt giải B Giải thưởng Sách Quốc gia lần thứ VIII', 'Tối ngày 08/03/2026, tại Đài Truyền hình Việt Nam, Lễ trao Giải thưởng Sách Quốc gia lần thứ VIII đã chính thức diễn ra...', '11 Tháng 03, 2026'],
+        ['Picture/news-demo/news-04.jpg', 'Lễ ra mắt sách & gặp gỡ nhóm tác giả “Chuyện người Hà Nội” tập 4', 'Tiếp nối thành công của ba tập sách “Chuyện người Hà Nội”, Công ty TNHH Sách và Truyền thông Việt Nam liên kết...', '12 Tháng 02, 2026'],
+        ['Picture/news-demo/news-05.jpg', 'Tri Thức Trẻ Books nhận giấy chứng nhận dự án Vietnamica', 'Ngày 25/11/2025 tại Đại học Quốc gia Hà Nội, Công ty TNHH Sách và Truyền thông Việt Nam đã nhận giấy chứng nhận...', '26 Tháng 11, 2025']
+    ];
+
+    function newsListItem(item) {
+        return [
+            '<a class="ttb-news-index-item" href="chi-tiet-tin.html">',
+            '<span class="ttb-news-index-thumb"><img src="' + item[0] + '" alt="' + item[1] + '" loading="lazy"><em>Tin tức/Sự kiện</em></span>',
+            '<span class="ttb-news-index-info"><strong>' + item[1] + '</strong><span>' + item[2] + '</span><small>Đăng ngày: ' + item[3] + '</small></span>',
+            '</a>'
+        ].join('');
+    }
+
+    main.innerHTML = [
+        '<div class="category_wrapper-breadcrum"><div class="container"><div class="ttb-demo-breadcrumb">',
+        '<a href="index.html"><i class="fas fa-home"></i></a><span>/</span><span>Tin tức</span>',
+        '</div></div></div>',
+        '<section class="ttb-news-index-section"><div class="container">',
+        '<div class="ttb-news-index-layout">',
+        '<div class="ttb-news-index-main">',
+        '<div class="ttb-news-index-tabs"><a class="active" href="tin-tuc.html">Tin tức/Sự kiện</a><a href="tin-tuc.html">Thông cáo báo chí</a><a href="tin-tuc.html">Bạn đọc viết</a><a href="tin-tuc.html">Video</a></div>',
+        '<h1>Tiêu điểm</h1>',
+        '<a class="ttb-news-index-feature" href="chi-tiet-tin.html">',
+        '<img src="Picture/news-demo/news-01.jpg" alt="Ra mắt bộ sách Phan Thuận An với Huế">',
+        '<span><em>Tin tức</em><strong>Ra mắt bộ sách “Phan Thuận An với Huế”: khoảng 100 bài viết về Lịch sử; Văn hóa và Cổ tích xứ Huế</strong></span>',
+        '</a>',
+        '<div class="ttb-news-index-list">',
+        newsItems.map(newsListItem).join(''),
+        '</div>',
+        '<nav class="ttb-all-books-pagination"><a href="#">‹</a><a href="#">1</a><a href="#">2</a><a class="active" href="#">3</a><span>...</span><a href="#">20</a><a href="#">›</a></nav>',
+        '</div>',
+        '<aside class="ttb-news-index-sidebar"><h2>TIN NỔI BẬT</h2>',
+        newsItems.map(function (item) {
+            return '<a href="chi-tiet-tin.html"><img src="' + item[0] + '" alt="" loading="lazy"><span>' + item[1] + '<small>' + item[3] + '</small></span></a>';
+        }).join(''),
+        '<a class="ttb-news-index-more" href="tin-tuc.html">Xem toàn bộ</a></aside>',
+        '</div>',
+        '</div></section>'
+    ].join('');
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     if (!/trang-chi-tiet-sach\.html$/i.test(window.location.pathname)) return;
 
@@ -796,7 +1017,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    if (!/bo-pham-cach-3-cuon-c47\.html$/i.test(window.location.pathname)) return;
+    if (!document.querySelector('.ttb-combo-detail-page')) return;
 
     var comboBuybox = document.querySelector('.ttb-combo-detail-page .ttb-detail-buybox');
     if (comboBuybox) {
