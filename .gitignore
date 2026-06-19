@@ -1,0 +1,19 @@
+# Local browser automation and visual QA artifacts
+.playwright-cli/
+output/
+
+# Generated archives and temporary files
+*.zip
+__pycache__/
+*.py[cod]
+*.tmp
+*.log
+temp*.py
+report.json
+request.json
+
+# OS/editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

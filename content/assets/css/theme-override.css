@@ -1,0 +1,572 @@
+/**
+ * Theme Override — Công ty Sách và Truyền thông Việt Nam
+ * Ghi đè màu thương hiệu: Đỏ (#ea262a) → Xanh lá (#14A64E)
+ *
+ * File này được nhúng SAU tất cả CSS gốc trong <head>.
+ * KHÔNG sửa các file .min.css gốc.
+ */
+
+/* ===== SECTION HEADINGS — Đổi tất cả tiêu đề từ đỏ sang xanh primary ===== */
+/* Selector chính: "SÁCH MỚI", "ƯU ĐÃI TRONG THÁNG", v.v. */
+.book_content h3.h3-20.color-8C8C8C.p-0.m-0,
+h2.printer-list-heading.text-center.position-relative.medium.h3-20 {
+  color: #14A64E !important;
+  border-bottom-color: #14A64E !important;
+}
+
+/* Collection / News / Author / Partner headings */
+.collection-heading h3,
+.latest-news_heading h3.latest-news_heading-label,
+.author_section .author_wrap .author_heading h3,
+.partner_wrap .partner_head h2 {
+  color: #14A64E !important;
+  border-bottom-color: #14A64E !important;
+}
+
+/* Category/Topic titles */
+.category_wrapper-right .topic-headding .topic-title h3 {
+  color: #14A64E !important;
+  border-bottom-color: #14A64E !important;
+}
+
+/* Tab titles */
+.list-book .tabbar .h3-20.medium {
+  color: #14A64E !important;
+  border-bottom-color: #14A64E !important;
+}
+
+/* border-bottom dưới tiêu đề (3px solid) */
+.book_content h3.h3-20.color-8C8C8C.p-0.m-0,
+.collection-heading h3,
+.latest-news_heading h3,
+.list-book .tabbar .h3-20.medium,
+.category_wrapper-right .topic-headding .topic-title h3 {
+  border-bottom: 3px solid #14A64E !important;
+}
+
+/* ===== LAYOUT — Container max-width ===== */
+.container {
+  max-width: 1296px !important;
+}
+
+/* ===== HERO SLIDER ===== */
+/* aspect-ratio: KHÓA chiều cao container = width × (545/1600)
+   overflow: hidden: clip phần Owl JS set dư qua inline height */
+
+.banner_section .home-slider {
+  width: 100%;
+  aspect-ratio: 1600 / 545;
+  overflow: hidden;
+  max-height: 700px;
+}
+
+/* Xóa margin/padding Bootstrap để ảnh sát mép */
+.banner_section .home-slider .row {
+  margin: 0 !important;
+}
+.banner_section .home-slider .col-12 {
+  padding: 0 !important;
+}
+
+/* Owl containers: overflow hidden để slide trước không thò ra */
+.banner_section .owl-stage-outer {
+  overflow: hidden !important;
+}
+
+.banner_section .home-slider_item {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  line-height: 0;
+}
+
+.banner_section .home-slider_item > a {
+  height: 100% !important;
+  display: block !important;
+}
+
+.banner_section .owl-carousel:not(.owl-loaded),
+.home-sliderMb .owl-carousel:not(.owl-loaded) {
+  display: block !important;
+}
+
+.banner_section .owl-carousel:not(.owl-loaded) .home-slider_item,
+.home-sliderMb .owl-carousel:not(.owl-loaded) .home-sliderMb_item {
+  display: none !important;
+}
+
+.banner_section .owl-carousel:not(.owl-loaded) .home-slider_item:first-child,
+.home-sliderMb .owl-carousel:not(.owl-loaded) .home-sliderMb_item:first-child {
+  display: block !important;
+}
+
+/* Ảnh hiển thị tự nhiên theo tỉ lệ gốc (1600×545) */
+.banner_section .home-slider_item img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  max-height: 700px;
+}
+
+/* ===== DROPDOWN MENU — Chỉ cao bằng nội dung, không kéo dài theo slide ===== */
+.menu_component .menu_category,
+.menu_component-mobile .menu_category {
+  align-self: flex-start;
+  position: relative;
+}
+
+.menu_component .dropdown-menu,
+.menu_component-mobile .dropdown-menu {
+  height: auto !important;
+  max-height: none !important;
+  min-height: unset !important;
+  /* Đảm bảo background trắng, không bị tint xanh từ parent */
+  background-color: #ffffff !important;
+  /* Tách khỏi flow của flex container */
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  z-index: 9999 !important;
+}
+
+/* Giảm khoảng cách giữa các item menu
+   — dùng 4-class selector để thắng main.min.css (.menu_component .menu_category .dropdown-menu li) */
+.menu_component .menu_category .dropdown-menu li {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.menu_component .menu_category .dropdown-menu .category_link {
+  padding: 8px 16px !important;
+  line-height: 1.3 !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+/* ===== CSS Variables ===== */
+:root {
+  --primary:          #14A64E;
+  --primary-dark:     #0f8a40;
+  --primary-light:    #28A745;
+  --primary-bg:       rgba(40, 167, 69, 0.08);
+  /* Giữ nguyên màu đỏ cho giá tiền */
+  --Red-Price:        #ea262a;
+  --Red-btn:          #0f8a40;
+  --red-badge-campaign-30: rgba(234, 38, 42, 0.3);
+  --Red-line-header:  rgba(40, 167, 69, 0.12);
+  --Brown-Dark-text:  #02010E;
+  --Brown-light-text: #828282;
+  --BG-card:          #F8F9FA;
+}
+
+/* ===== NAVBAR / MENU ===== */
+.menu_component,
+.menu_component-mobile {
+  background: #14A64E !important;
+}
+
+/* "DANH MỤC SÁCH" button — màu tương phản rõ với navbar #14A64E */
+/* Dùng xanh lá sáng #3ECF7E để mắt phân biệt được vs navbar */
+.menu_component .menu_category {
+  background-color: #3ECF7E !important;
+  color: #fff !important;
+  height: auto !important;
+}
+
+.menu_component .menu_category .dropdown-menu .category_link {
+  color: #02010E !important;
+}
+
+.menu_component .menu_category .dropdown-menu .category_link.maintainHover,
+.menu_component .menu_category .dropdown-menu .category_link:hover {
+  color: #14A64E !important;
+  border-color: #14A64E !important;
+}
+
+.menu_component .menu_category .category_show_all {
+  color: #14A64E !important;
+}
+
+.menu_category.d-flex.align-items-center.active.menu_index,
+.menu_category.active {
+  background-color: #3ECF7E !important;
+}
+
+/* ===== SEARCH BUTTON ===== */
+/* main.min.css dùng selector 3-class: .menu_component .menu_search .search_submit
+   → phải match đúng specificity hoặc dùng !important với selector đầy đủ */
+
+/* Ẩn text "Tìm kiếm" trong span */
+.menu_component .menu_search .search_submit span {
+  display: none !important;
+}
+
+/* Bỏ border-left, giữ padding để icon không bị sát */
+.menu_component .menu_search .search_submit {
+  border-left: none !important;
+  padding: 0 12px !important;
+  background: transparent !important;
+}
+
+/* .button_icon: vị trí và màu — giữ đúng absolute positioning của theme gốc,
+   chỉ đổi màu từ #b70808 (đỏ sẫm) → #f4831e (cam) */
+.menu_component .menu_search .search_submit .button_icon {
+  background: #f4831e !important;
+  position: absolute !important;
+  right: -15px !important;
+  top: 50% !important;
+  transform: translate(50%, -50%) !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  border-radius: 50% !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ===== BUTTONS — Primary ===== */
+.btn-primary,
+.btn-danger,
+[class*="btn-red"],
+.btn-add-to-cart,
+.btn-buy-now {
+  background-color: #14A64E !important;
+  border-color: #14A64E !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-danger:hover,
+[class*="btn-red"]:hover,
+.btn-add-to-cart:hover,
+.btn-buy-now:hover {
+  background-color: #0f8a40 !important;
+  border-color: #1e7e34 !important;
+}
+
+.btn-outline-danger,
+.btn-outline-primary {
+  color: #14A64E !important;
+  border-color: #14A64E !important;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-primary:hover {
+  background-color: #14A64E !important;
+  color: #fff !important;
+}
+
+/* ===== HEADER ===== */
+.section_header .header_wrap .header_info .header_hotline a,
+.section_header .header_wrap .header_info .header_hotline p {
+  color: #02010E !important;
+}
+
+/* Cart badge */
+.cart-count,
+.badge-cart,
+[class*="cart"] .badge {
+  background-color: #14A64E !important;
+}
+
+/* ===== LINKS & TEXT ===== */
+a {
+  color: #02010E;
+}
+
+a:hover {
+  color: #14A64E;
+}
+
+/* Giá tiền GIỮ màu đỏ gốc */
+.price,
+.product-price,
+.detail-price,
+.price-color,
+.item-price,
+.color-AA8B47,
+[class*="price"]:not(.price-original):not(.price-old):not(.price-through) {
+  color: #ea262a !important;
+}
+
+/* ===== SECTION TITLES ===== */
+.section-title .title-border,
+.section-title::after,
+[class*="section-title"] .line,
+.book-section-header .border-line {
+  background-color: #14A64E !important;
+  border-color: #14A64E !important;
+}
+
+.section-title a,
+.section-header a,
+[class*="view-all"],
+[class*="xem-them"] {
+  color: #14A64E !important;
+}
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb-item.active,
+.breadcrumb-item a:hover {
+  color: #14A64E !important;
+}
+
+/* ===== PAGINATION ===== */
+.page-item.active .page-link {
+  background-color: #14A64E !important;
+  border-color: #14A64E !important;
+}
+
+.page-link {
+  color: #14A64E !important;
+}
+
+.page-link:hover {
+  color: #0f8a40 !important;
+}
+
+/* ===== FORM INPUTS — FOCUS ===== */
+.form-control:focus {
+  border-color: #14A64E !important;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
+}
+
+/* ===== TABS ===== */
+.nav-tabs .nav-link.active,
+.nav-pills .nav-link.active {
+  background-color: #14A64E !important;
+  border-color: #14A64E !important;
+  color: #fff !important;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-pills .nav-link:hover {
+  color: #14A64E !important;
+}
+
+/* ===== FLASH SALE / BANNER STRIP ===== */
+[class*="flash-sale"],
+[class*="flashsale"],
+[class*="banner-red"],
+.section-banner-sale {
+  background-color: #14A64E !important;
+}
+
+/* ===== BOOK SECTION HEADER STRIP ===== */
+[class*="section-header-bg"],
+[class*="title-bg"],
+.book-section-header {
+  background-color: #14A64E !important;
+}
+
+/* ===== FOOTER ===== */
+.section.footer,
+.section_footer,
+footer {
+  background-color: #f8f9fa;
+}
+
+.footer-copyright {
+  background-color: #14A64E !important;
+  color: #fff !important;
+}
+
+/* Footer links */
+.footer a:hover {
+  color: #14A64E !important;
+}
+
+/* ===== TOASTS / NOTIFICATIONS ===== */
+.toast.bg-success,
+.toast-success {
+  background-color: #14A64E !important;
+}
+
+/* ===== SCROLL TO TOP ===== */
+.scroll-top,
+#scrollTop,
+[class*="back-to-top"] {
+  background-color: #14A64E !important;
+}
+
+/* ===== VIP / MEMBERSHIP ===== */
+[class*="vip"] .btn,
+[class*="upgrade"] .btn {
+  background-color: #14A64E !important;
+  border-color: #14A64E !important;
+}
+
+/* ===== CHECKOUT ===== */
+.checkout-btn,
+.btn-checkout,
+.btn-payment {
+  background-color: #14A64E !important;
+  border-color: #14A64E !important;
+}
+
+/* ===== TAG / BADGE — section labels ===== */
+[class*="tag-primary"],
+[class*="badge-primary"] {
+  background-color: #14A64E !important;
+}
+
+/* ===== STAR RATING (giữ vàng) ===== */
+.fa-star,
+.star-rating {
+  color: #FFC107; /* giữ vàng */
+}
+
+/* ===== MOBILE MENU ===== */
+/* Chỉ giữ xanh cho TOPBAR mobile, không set background cho drawer */
+.menu_component-mobile {
+  background-color: #14A64E !important;
+}
+
+/* Mobile drawer: nền trắng, icon + text hiển thị */
+.menu_list-mobile {
+  background-color: #ffffff !important;
+}
+
+/* Mobile menu items */
+.menu_list-mobile .menu_list_wrap .category_link {
+  color: #222222 !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.menu_list-mobile .menu_list_wrap .category_link a {
+  color: #222222 !important;
+}
+
+/* FA icons trong mobile menu */
+.menu_list-mobile .menu_list_wrap .category_link .category_icon {
+  flex: 0 0 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 10px !important;
+}
+
+.menu_list-mobile .menu_list_wrap .category_icon i {
+  color: #14A64E !important;
+  font-size: 16px !important;
+}
+
+/* Mobile slider banner */
+.home_section_sp .home-sliderMb_item img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Section sách hiển thị trên mobile */
+@media (max-width: 1024px) {
+  .section-dt {
+    display: none !important;
+  }
+
+  .section-dich-vu-xuat-ban,
+  .tac-gia-tieu-bieu,
+  .key-partner {
+    display: block !important;
+  }
+}
+
+/* Author section: keep newly supplied portrait assets from overflowing cards. */
+.tac-gia-tieu-bieu .ttb-author-carousel {
+  position: relative;
+  padding: 4px 34px 8px;
+}
+
+.tac-gia-tieu-bieu .ttb-author-carousel .owl-stage {
+  display: flex;
+  align-items: stretch;
+}
+
+.tac-gia-tieu-bieu .ttb-author-carousel .owl-item {
+  display: flex;
+  justify-content: center;
+}
+
+.tac-gia-tieu-bieu .box-item {
+  min-width: 0;
+  width: 100%;
+}
+
+.tac-gia-tieu-bieu .author_item {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.tac-gia-tieu-bieu .author_item-img,
+.tac-gia-tieu-bieu .author_item-img .img_links {
+  display: block;
+  width: 150px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f5f7f6;
+}
+
+.tac-gia-tieu-bieu .author_item-img img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+
+.tac-gia-tieu-bieu .author_item-info {
+  display: block;
+  width: 100%;
+}
+
+.tac-gia-tieu-bieu .info_name {
+  color: #202020;
+  line-height: 1.35;
+}
+
+.tac-gia-tieu-bieu .owl-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.tac-gia-tieu-bieu .owl-nav button {
+  pointer-events: auto;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50% !important;
+  background: #fff !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+.tac-gia-tieu-bieu .owl-nav button i {
+  color: #09ae4d !important;
+  font-size: 20px;
+}
+
+@media (max-width: 575.98px) {
+  .tac-gia-tieu-bieu .ttb-author-carousel {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .tac-gia-tieu-bieu .author_item-img,
+  .tac-gia-tieu-bieu .author_item-img .img_links {
+    width: 128px;
+  }
+}
