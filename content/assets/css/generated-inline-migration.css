@@ -7677,3 +7677,6 @@ textarea {
 /* TTB_DESKTOP_HEADER_PRIMARY_ACTIONS */
 .section_header .header_button.cart>a,.section_header .header_button.account>a{border-color:#00b346!important;color:#00b346!important;transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease,color .2s ease,transform .2s ease}
 .section_header .header_button.cart>a:hover,.section_header .header_button.account>a:hover{background:#effaf3!important;border-color:#009b49!important;box-shadow:0 5px 14px rgba(0,179,70,.16);color:#009b49!important;transform:translateY(-1px)}
+
+/* TTB_BACABANK_SVG_LOGO */
+.ttb-bac-a-mark{align-items:center;display:inline-flex;margin-left:auto}.ttb-bac-a-mark img{display:block;height:22px;max-width:108px;object-fit:contain;width:auto}

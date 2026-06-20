@@ -16,7 +16,7 @@ var page=[
 '<div class="ttb-transfer-divider"><span>Ho\u1eb7c nh\u1eadp th\u00f4ng tin chuy\u1ec3n kho\u1ea3n</span></div>',
 '<div class="ttb-transfer-code-box"><strong>N\u1ed9i dung Chuy\u1ec3n kho\u1ea3n:</strong><div><b>4 6 4 7 5 4</b><button type="button" data-copy="464754"><i class="far fa-copy"></i></button></div><small>L\u01b0u \u00fd: \u0110i\u1ec1n ch\u00ednh x\u00e1c m\u00e3 tr\u00ean \u0111\u00e2y v\u00e0o n\u1ed9i dung chuy\u1ec3n kho\u1ea3n</small></div>',
 '<dl class="ttb-transfer-bank-list">',
-'<div><dt>Ng\u00e2n h\u00e0ng</dt><dd><strong>Ng\u00e2n h\u00e0ng TMCP B\u1eafc \u00c1</strong><span class="ttb-bac-a-mark">BAC A BANK</span></dd></div>',
+'<div><dt>Ng\u00e2n h\u00e0ng</dt><dd><strong>Ng\u00e2n h\u00e0ng TMCP B\u1eafc \u00c1</strong><span class="ttb-bac-a-mark"><img src="Picture/bacabank-logo.svg" alt="BAC A BANK"></span></dd></div>',
 '<div><dt>Chi nh\u00e1nh</dt><dd><strong>C\u1ea7u Gi\u1ea5y</strong><button type="button" data-copy="C\u1ea7u Gi\u1ea5y"><i class="far fa-copy"></i></button></dd></div>',
 '<div><dt>S\u1ed1 t\u00e0i kho\u1ea3n</dt><dd><strong>1 8 0 0 0 1 0 6 0 0 1 3 7 8 5</strong><button type="button" data-copy="180001060013785"><i class="far fa-copy"></i></button></dd></div>',
 '<div><dt>Ch\u1ee7 t\u00e0i kho\u1ea3n</dt><dd><strong>C\u00d4NG TY TNHH S\u00c1CH V\u00c0 TRUY\u1ec0N TH\u00d4NG VI\u1ec6T NAM</strong><button type="button" data-copy="C\u00d4NG TY TNHH S\u00c1CH V\u00c0 TRUY\u1ec0N TH\u00d4NG VI\u1ec6T NAM"><i class="far fa-copy"></i></button></dd></div>',
