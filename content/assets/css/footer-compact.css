@@ -1,0 +1,45 @@
+
+/* Compact shared footer marketplace strip */
+.ttb-footer-top {
+  min-height: 72px !important;
+}
+.ttb-footer-top-inner {
+  min-height: 72px !important;
+  column-gap: 22px;
+}
+.ttb-footer-marketplaces {
+  gap: 17px !important;
+}
+.ttb-footer-marketplaces a,
+.ttb-footer-marketplaces img {
+  width: 36px !important;
+  height: 36px !important;
+}
+.ttb-footer-contact-form {
+  grid-template-columns: auto 330px;
+  gap: 16px;
+}
+.ttb-footer-brand {
+  font-size: 18px !important;
+}
+.ttb-footer-input {
+  width: 330px !important;
+  height: 42px !important;
+  padding: 3px 3px 3px 12px !important;
+}
+.ttb-footer-input input {
+  height: 32px;
+  font-size: 13px;
+  line-height: 32px;
+}
+.ttb-footer-input button {
+  min-width: 96px;
+  height: 32px;
+  padding: 0 12px !important;
+  font-size: 13px;
+}
+@media (max-width: 767px) {
+  .ttb-footer-top,
+  .ttb-footer-top-inner { min-height: auto !important; }
+  .ttb-footer-top-inner { padding: 18px 0 !important; }
+}

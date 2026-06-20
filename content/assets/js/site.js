@@ -1564,3 +1564,14 @@ document.querySelectorAll('.ttb-footer-follow a,.ttb-footer-marketplaces a,.cont
 document.querySelectorAll('.contact-item').forEach(function(x){var i=x.querySelector('i'),t=x.querySelector('.tooltiptext');if(i&&/messenger/.test(i.className)&&t)t.textContent='Nha Sach Tri Thuc Tre';});
 });
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.ttb-footer-follow ul').forEach(function(u){if(u.querySelector('.fa-tiktok'))return;var x=document.createElement('li');x.innerHTML='<a href="https://www.tiktok.com/@trithuctrebooksvn" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>';u.appendChild(x);});document.querySelectorAll('.contact-item').forEach(function(x){var i=x.querySelector('i'),t=x.querySelector('.tooltiptext');if(i&&/messenger/.test(i.className)&&t)t.innerHTML='Nh&agrave; S&aacute;ch Tri Th&#7913;c Tr&#7867;';});});
+
+/* Load compact footer overrides from a shared stylesheet. */
+(function () {
+  var script = document.currentScript || document.querySelector('script[src*="content/assets/js/site.js"]');
+  if (!script || document.querySelector('link[data-ttb-footer-compact]')) return;
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = new URL('../css/footer-compact.css?v=1', script.src).href;
+  link.setAttribute('data-ttb-footer-compact', '');
+  document.head.appendChild(link);
+})();
