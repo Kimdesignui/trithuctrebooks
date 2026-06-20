@@ -23,11 +23,14 @@
     return wrap;
   }
   function init(){
+    var readingMode=/\/customer\/reading-book\/?$/i.test(location.pathname);
     document.querySelectorAll('.ttb-purchased-card').forEach(function(card,index){
+      var initialBadge=card.querySelector('.ttb-purchased-badge');
+      if(readingMode&&initialBadge&&initialBadge.textContent.trim().toLowerCase()==='video'){card.remove();return;}
       var days=card.querySelector('.ttb-purchased-days');
       var action=card.querySelector('.ttb-book-action');
       var badge=card.querySelector('.ttb-purchased-badge');
-      var isPaper=paperBookIndexes.indexOf(index)>-1;
+      var isPaper=!readingMode&&paperBookIndexes.indexOf(index)>-1;
       setTarget(card.querySelector('.ttb-purchased-cover'),detailUrl,false);
       if(!action)return;
       if(isPaper){
@@ -53,8 +56,12 @@
     document.querySelectorAll('.ttb-purchased-pagination a').forEach(function(link,index){
       var label=link.textContent.trim();
       var page=/^\d+$/.test(label)?label:(index===0?'2':'4');
-      link.href='/customer/purchased-book?page='+page;
+      link.href=(readingMode?'/customer/reading-book':'/customer/purchased-book')+'?page='+page;
     });
+    if(readingMode){
+      var videoAction=document.querySelector('.ttb-recent-actions .ttb-action-red');
+      if(videoAction)videoAction.remove();
+    }
     var recent=document.querySelector('.ttb-reading-progress');
     if(recent){recent.innerHTML='';recent.appendChild(createProgress(93));}
   }
