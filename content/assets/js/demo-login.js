@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   'use strict';
 
   var demoUsername = 'demo@trithuctrebooks.vn';
@@ -20,7 +20,7 @@
     }
 
     window.setTimeout(function () {
-      window.location.href = 'index.html';
+      window.location.href = 'account.html';
     }, 350);
   }
 
@@ -52,3 +52,4 @@
     initDemoLogin();
   }
 })();
+
