@@ -4,6 +4,7 @@
   var detailUrl='trang-chi-tiet-sach.html';
   var audioUrl='nghe-audiobooks.html';
   var progressValues=[93,74,48,62,31,85,56,19,67,42,90,25,71,38,82,53,16,64,77,34];
+  var paperBookIndexes=[1,3,4,6,8,10];
   function setTarget(link,url,external){
     if(!link)return;
     link.href=url;
@@ -24,10 +25,20 @@
   function init(){
     document.querySelectorAll('.ttb-purchased-card').forEach(function(card,index){
       var days=card.querySelector('.ttb-purchased-days');
-      if(days)days.parentNode.insertBefore(createProgress(progressValues[index%progressValues.length]),days);
-      setTarget(card.querySelector('.ttb-purchased-cover'),detailUrl,false);
       var action=card.querySelector('.ttb-book-action');
+      var badge=card.querySelector('.ttb-purchased-badge');
+      var isPaper=paperBookIndexes.indexOf(index)>-1;
+      setTarget(card.querySelector('.ttb-purchased-cover'),detailUrl,false);
       if(!action)return;
+      if(isPaper){
+        if(badge){badge.textContent='Sách giấy';badge.className='ttb-purchased-badge paper';}
+        action.textContent='Xem chi tiết';
+        action.className='ttb-book-action purple';
+        setTarget(action,detailUrl,false);
+        if(days)days.remove();
+        return;
+      }
+      if(days)days.parentNode.insertBefore(createProgress(progressValues[index%progressValues.length]),days);
       var text=action.textContent.trim().toLowerCase();
       if(text.indexOf('nghe')>-1)setTarget(action,audioUrl,false);
       else if(text.indexOf('đọc')>-1)setTarget(action,readUrl,true);
