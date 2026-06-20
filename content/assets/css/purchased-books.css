@@ -1,0 +1,34 @@
+.ttb-purchased-page{padding:0 0 86px;background:#fff;color:#555}
+.ttb-purchased-page .container{max-width:1296px}
+.ttb-purchased-layout{display:grid;grid-template-columns:25% 75%;align-items:start}
+.ttb-purchased-layout .ttb-account-sidebar{width:calc(100% - 28px)}
+.ttb-purchased-content{min-width:0}
+.ttb-purchased-heading{margin:14px 0 28px;font-size:22px;font-weight:700;color:#333}
+.ttb-library-section{margin-bottom:40px}
+.ttb-library-section-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #bbb;margin-bottom:22px}
+.ttb-library-section-head h2{margin:0;padding:0 0 12px;border-bottom:3px solid #12a751;color:#12a751;font-size:18px}
+.ttb-library-section-head select{width:100px;height:34px;margin-bottom:7px;border:1px solid #bbb;border-radius:4px;background:#fff;padding:0 8px;color:#777}
+.ttb-recent-book{display:grid;grid-template-columns:180px 1fr;gap:28px;max-width:720px}
+.ttb-recent-book img{width:180px;height:250px;object-fit:cover}
+.ttb-recent-info{padding-top:8px}
+.ttb-recent-info h3{font-size:20px;color:#333;margin:0 0 18px}
+.ttb-recent-meta{display:flex;flex-direction:column;gap:11px;font-size:14px}
+.ttb-recent-meta a{color:#4385ff}
+.ttb-reading-progress{display:flex;align-items:center;gap:12px;margin:22px 0 14px}
+.ttb-reading-progress span:first-child{display:block;width:75%;height:5px;background:#1687e8}
+.ttb-recent-actions{display:flex;gap:10px;flex-wrap:wrap}
+.ttb-recent-actions a{min-width:80px;padding:8px 12px;border-radius:4px;text-align:center;color:#fff;font-size:13px}
+.ttb-action-green{background:#13aa4d}.ttb-action-blue{background:#1457ff}.ttb-action-purple{background:#b86df1}.ttb-action-red{background:#f33336}.ttb-action-orange{background:#ff8a12}
+.ttb-purchased-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px 28px}
+.ttb-purchased-card{position:relative;text-align:center}
+.ttb-purchased-cover{position:relative;display:block;height:220px;margin-bottom:12px}
+.ttb-purchased-cover img{width:100%;height:100%;object-fit:contain}
+.ttb-purchased-badge{position:absolute;right:4px;top:0;border-radius:10px;padding:3px 8px;background:#13aa4d;color:#fff;font-size:10px}
+.ttb-purchased-badge.audio{background:#1969dd}.ttb-purchased-badge.video{background:#ef3338}.ttb-purchased-badge.paper{background:#b86df1}
+.ttb-purchased-card h3{height:38px;margin:0 0 8px;overflow:hidden;color:#555;font-size:14px;font-weight:400;line-height:19px}
+.ttb-purchased-days{padding-top:8px;border-top:3px solid #1687e8;color:#777;font-size:12px}
+.ttb-purchased-card .ttb-book-action{display:inline-block;margin-top:8px;border:1px solid #12a751;border-radius:4px;padding:6px 18px;color:#12a751;font-size:12px}
+.ttb-purchased-card .ttb-book-action.red{border-color:#f33336;color:#f33336}.ttb-purchased-card .ttb-book-action.blue{border-color:#1457ff;color:#1457ff}.ttb-purchased-card .ttb-book-action.purple{border-color:#b86df1;color:#b86df1}
+.ttb-purchased-pagination{margin:42px 0 0}
+@media(max-width:991px){.ttb-purchased-layout{grid-template-columns:32% 68%}.ttb-purchased-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 18px}.ttb-recent-book{grid-template-columns:150px 1fr}.ttb-recent-book img{width:150px;height:215px}}
+@media(max-width:767px){.ttb-purchased-page{padding-bottom:48px}.ttb-purchased-layout{grid-template-columns:1fr;gap:24px}.ttb-purchased-layout .ttb-account-sidebar{width:100%}.ttb-purchased-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px}.ttb-recent-book{grid-template-columns:110px 1fr;gap:16px}.ttb-recent-book img{width:110px;height:160px}.ttb-recent-info{padding-top:0}.ttb-recent-info h3{font-size:17px;margin-bottom:10px}.ttb-recent-actions a{min-width:68px;padding:7px 9px}.ttb-purchased-cover{height:180px}}
