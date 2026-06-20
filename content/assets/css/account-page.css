@@ -20,7 +20,7 @@
 .ttb-account-balance p{margin:0 0 8px;color:#666;font-size:14px}
 .ttb-account-balance-row{display:flex;align-items:center;gap:9px;color:#f33232;font-weight:700}
 .ttb-account-balance-row i{color:#1457ff}
-.ttb-account-balance-row button{margin-left:auto;border:0;border-radius:4px;background:#1457ff;color:#fff;padding:7px 12px;font-size:13px}
+.ttb-account-balance-row button{margin-left:auto;border:0;border-radius:4px;background:#1457ff;color:#fff;padding:7px 12px;font-size:14px;line-height:1.2}
 .ttb-account-form{padding:24px 28px 46px}
 .ttb-account-form h2{margin:0 0 24px;padding-bottom:14px;border-bottom:1px solid #bbb;font-size:18px}
 .ttb-account-field{position:relative;margin-bottom:17px}
