@@ -7680,3 +7680,11 @@ textarea {
 
 /* TTB_BACABANK_SVG_LOGO */
 .ttb-bac-a-mark{align-items:center;display:inline-flex;margin-left:auto}.ttb-bac-a-mark img{display:block;height:22px;max-width:108px;object-fit:contain;width:auto}
+
+/* TTB_FOOTER_CONTAINED_COMPACT */
+.ttb-footer-top>.container,.ttb-footer-main>.container{max-width:1296px!important;width:calc(100% - 32px)}
+.ttb-footer-brand{font-size:25px!important}.ttb-footer-input input,.ttb-footer-input button{font-size:14px!important}.ttb-footer-company-info h3{font-size:21px!important}.ttb-footer-contact-list li{font-size:14px!important}.ttb-footer-contact-list i{font-size:12px!important}.ttb-footer-follow p{font-size:21px!important}.ttb-footer-follow a{font-size:17px!important}.ttb-footer-col h3{font-size:22px!important;min-width:0!important;width:fit-content}.ttb-footer-col a{font-size:14px!important}.ttb-footer-payment-block h4{font-size:21px!important}.ttb-footer-copyright span{font-size:14px!important}
+@media(max-width:767.98px){.ttb-footer-top>.container,.ttb-footer-main>.container{width:100%;}}
+
+/* TTB_SITEWIDE_DESKTOP_CONTAINER */
+@media(min-width:1200px){.container,.container-xl,.container-lg,.container-md,.container-sm{max-width:1296px!important}}
