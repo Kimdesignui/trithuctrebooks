@@ -7688,3 +7688,6 @@ textarea {
 
 /* TTB_SITEWIDE_DESKTOP_CONTAINER */
 @media(min-width:1200px){.container,.container-xl,.container-lg,.container-md,.container-sm{max-width:1296px!important}}
+
+/* TTB_FOOTER_LINK_DENSITY */
+.ttb-footer-col>ul{gap:10px!important}.ttb-footer-policy>ul{gap:10px!important}
