@@ -1,4 +1,4 @@
-.ttb-account-page{padding:0 0 88px;background:#fff;color:#444}
+﻿.ttb-account-page{padding:0 0 88px;background:#fff;color:#444}
 .ttb-account-page .container{max-width:1296px}
 .ttb-account-breadcrumb{display:flex;align-items:center;gap:10px;padding:16px 0 12px;border-bottom:1px solid #eee;color:#888;font-size:14px}
 .ttb-account-breadcrumb a{color:#4385ff}
@@ -27,7 +27,7 @@
 .ttb-account-field label{position:absolute;top:-9px;left:10px;z-index:1;padding:0 6px;background:#fff;font-size:13px;font-weight:600}
 .ttb-account-field input,.ttb-account-field select{width:100%;height:42px;border:1px solid #ddd;border-radius:4px;background:#fff;padding:0 38px 0 10px;color:#555;font-size:14px}
 .ttb-account-field i{position:absolute;right:12px;bottom:13px;color:#aaa}
-.ttb-account-save{display:block;margin:20px auto 0;border:0;border-radius:4px;background:#f12f32;color:#fff;padding:10px 22px;font-weight:700}
+.ttb-account-save{display:block;margin:20px auto 0;border:0;border-radius:4px;background:#f12f32;color:#fff;padding:10px 22px;font-size:14px;font-weight:700;line-height:1.2}
 .ttb-account-save:hover{background:#d92528}
 .ttb-account-notice{display:none;margin:14px 0 0;text-align:center;color:#12a751;font-weight:600}
 .ttb-account-notice.show{display:block}
