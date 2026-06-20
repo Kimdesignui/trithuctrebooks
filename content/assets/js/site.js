@@ -1,4 +1,4 @@
-﻿var arrOIds = new Array();
+var arrOIds = new Array();
 function getParameters(name, valueDefault) {
     var url = window.location.href;
     if (url.indexOf("?") > 0) {
@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<label class="ttb-detail-option active"><span><i class="far fa-book"></i>Sách giấy</span><span class="ttb-detail-qty"><button type="button">−</button><em>1</em><button type="button">+</button></span><strong>146.000đ</strong><input type="checkbox" checked aria-label="Chọn sách giấy"></label>',
         '<label class="ttb-detail-option"><span><i class="far fa-mobile-alt"></i>Ebook</span><select aria-label="Thời hạn ebook"><option>1 năm</option><option>2 năm</option><option>Vô thời hạn</option></select><strong>146.000đ</strong><input type="checkbox" aria-label="Chọn ebook"></label>',
         '<label class="ttb-detail-option"><span><i class="far fa-volume-up"></i>Audio book</span><select aria-label="Thời hạn audio"><option>1 năm</option><option>2 năm</option><option>Vô thời hạn</option></select><strong>146.000đ</strong><input type="checkbox" aria-label="Chọn audio book"></label>',
-        '<div class="ttb-detail-total"><span>Thành tiền</span><strong>146.000đ</strong></div><div class="ttb-detail-actions"><a class="ttb-detail-buy-now" href="checkout-cart.html">Mua ngay</a><a class="ttb-detail-add-cart" href="checkout-cart.html"><i class="far fa-shopping-basket"></i>Thêm vào giỏ</a></div>',
+        '<div class="ttb-detail-total"><span>Thành tiền</span><strong>146.000đ</strong></div><div class="ttb-detail-actions"><a class="ttb-detail-buy-now" href="cart-full.html">Mua ngay</a><a class="ttb-detail-add-cart" href="cart-full.html"><i class="far fa-shopping-basket"></i>Thêm vào giỏ</a></div>',
         '<div class="ttb-detail-promo"><i class="far fa-badge-percent"></i>Hình thức: Bìa cứng áo ôm kèm chữ ký & triện tác giả, postcard, bookmark.</div>',
         '</div></div></div>',
         '<div class="row ttb-detail-main-row">',
@@ -1540,5 +1540,21 @@ document.addEventListener('DOMContentLoaded', function () {
         Array.from(card.querySelectorAll('.ttb-detail-side-item')).slice(5).forEach(function (item) {
             item.remove();
         });
+    });
+});
+
+/* TTB_HOME_NEWS_LINK_NORMALIZER */
+document.addEventListener('DOMContentLoaded', function () {
+    if (!/(?:^|\/)index\.html$/i.test(window.location.pathname) && window.location.pathname !== '/') return;
+    document.querySelectorAll('a[href]').forEach(function (link) {
+        var href = link.getAttribute('href') || '';
+        var newsContext = link.closest('[class*="news" i], [class*="tin-tuc" i], [class*="blog" i]');
+        if (newsContext || /trithuctrebooks\.com\/blogs\/|\/blogs\//i.test(href)) link.setAttribute('href', 'chi-tiet-tin.html');
+    });
+});
+/* TTB_CART_ROUTE_NORMALIZER */
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href="checkout-cart.html"]').forEach(function (link) {
+        link.setAttribute('href', 'cart-full.html');
     });
 });

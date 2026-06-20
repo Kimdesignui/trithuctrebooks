@@ -7397,3 +7397,283 @@ textarea {
     max-width: 100%;
   }
 }
+
+/* TTB_CART_PAGE_STYLES */
+.ttb-cart-page{background:#fff;color:#333;font-family:Arial,sans-serif;font-size:14px}.ttb-cart-main{min-height:520px;padding:22px 0 64px}.ttb-cart-breadcrumb{display:flex;align-items:center;gap:9px;margin:0 0 20px;color:#4c86f7;font-size:14px}.ttb-cart-breadcrumb a{color:#4c86f7}.ttb-cart-heading{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #dedede;margin-bottom:24px;padding-bottom:13px}.ttb-cart-heading h1{color:#00a550;font-size:22px;font-weight:700;line-height:1.2;margin:0}.ttb-cart-heading h1:after{content:'';display:block;width:86px;height:3px;background:#00a550;position:relative;top:16px}.ttb-cart-heading a{color:#777;font-size:14px;font-weight:600}.ttb-cart-heading a:hover{color:#00a550}.ttb-cart-layout{display:grid;grid-template-columns:minmax(0,1fr) 345px;gap:28px;align-items:start}.ttb-cart-items,.ttb-cart-summary{border:1px solid #e3e3e3;border-radius:5px;background:#fff}.ttb-cart-items>header{display:grid;grid-template-columns:minmax(250px,1fr) 110px 124px 112px;align-items:center;padding:14px 20px;border-bottom:1px solid #e6e6e6;color:#666;font-size:13px;font-weight:700;text-transform:uppercase}.ttb-cart-item{display:grid;grid-template-columns:105px minmax(145px,1fr) 110px 124px 112px;gap:12px;align-items:center;padding:20px}.ttb-cart-book-image{display:grid;place-items:center;height:132px;border:1px solid #f0f0f0;overflow:hidden}.ttb-cart-book-image img{max-width:100%;height:100%;object-fit:contain;transition:transform .2s ease}.ttb-cart-book-image:hover img{transform:scale(1.04)}.ttb-cart-book-info{align-self:stretch;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:9px}.ttb-cart-book-info>a{color:#333;font-size:16px;font-weight:700;line-height:1.45}.ttb-cart-book-info>a:hover{color:#00a550}.ttb-cart-book-info p{display:flex;flex-wrap:wrap;gap:8px;color:#888;font-size:12px;margin:0}.ttb-book-type{align-items:center;background:#fff;border:1px solid #e2e2e2;border-radius:20px;box-shadow:0 2px 6px rgba(0,0,0,.11);color:#1564ff;display:inline-flex;gap:5px;padding:3px 8px}.ttb-cart-remove{background:transparent;border:0;color:#999;font-size:12px;padding:0}.ttb-cart-remove:hover{color:#e93636}.ttb-cart-unit-price,.ttb-cart-line-total{color:#f22929;font-size:15px;text-align:right;white-space:nowrap}.ttb-cart-quantity{display:flex;justify-content:center}.ttb-cart-quantity button,.ttb-cart-quantity input{border:1px solid #d8d8d8;color:#555;height:32px;text-align:center}.ttb-cart-quantity button{background:#f7f7f7;width:31px}.ttb-cart-quantity button:hover{background:#00a550;border-color:#00a550;color:#fff}.ttb-cart-quantity input{border-left:0;border-right:0;width:40px}.ttb-cart-note{align-items:center;background:#f4fbf7;border-top:1px solid #dcefe3;color:#377757;display:flex;gap:9px;font-size:13px;padding:12px 20px}.ttb-cart-note i{color:#00a550}.ttb-cart-summary{background:#fafafa;padding:22px}.ttb-cart-summary h2{border-bottom:1px solid #ddd;color:#333;font-size:16px;font-weight:700;margin:0 0 17px;padding-bottom:15px}.ttb-cart-summary-row,.ttb-cart-total{align-items:center;display:flex;justify-content:space-between;margin:14px 0}.ttb-cart-summary-row span{color:#666}.ttb-cart-summary-row strong{color:#333}.ttb-cart-summary-row em{color:#929292;font-size:12px;font-style:normal}.ttb-cart-voucher{border-top:1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;margin:18px 0;padding:17px 0}.ttb-cart-voucher label{color:#555;font-size:13px;font-weight:700;margin-bottom:8px}.ttb-cart-voucher>div{display:flex}.ttb-cart-voucher input{border:1px solid #d4d4d4;border-right:0;font-size:13px;min-width:0;padding:9px;width:100%}.ttb-cart-voucher button{background:#fff;border:1px solid #00a550;color:#00a550;font-size:13px;font-weight:700;padding:0 12px}.ttb-cart-voucher button:hover{background:#00a550;color:#fff}.ttb-cart-total span{color:#333;font-size:16px;font-weight:700;text-transform:uppercase}.ttb-cart-total strong{color:#f22929;font-size:22px}.ttb-cart-checkout{align-items:center;background:#ef3030;border:1px solid #ef3030;color:#fff;display:flex;font-size:15px;font-weight:700;gap:8px;justify-content:center;margin-top:20px;padding:13px;text-transform:uppercase}.ttb-cart-checkout:hover{background:#c92727;border-color:#c92727;color:#fff}.ttb-cart-secure{color:#777;font-size:12px;margin:14px 0 0;text-align:center}.ttb-cart-secure i{color:#00a550;margin-right:5px}.ttb-cart-summary.is-empty{opacity:.58;pointer-events:none}.ttb-cart-empty{padding:28px 20px;text-align:center}.ttb-cart-empty a{color:#00a550;font-weight:700}.ttb-cart-benefits{background:#f8fcf9;border:1px solid #e0eee4;display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px}.ttb-cart-benefits>div{align-items:center;display:flex;gap:13px;min-height:84px;padding:15px 20px}.ttb-cart-benefits>div+div{border-left:1px solid #e0eee4}.ttb-cart-benefits i{color:#00a550;font-size:24px}.ttb-cart-benefits span{color:#777;display:grid;font-size:12px;gap:3px}.ttb-cart-benefits strong{color:#333;font-size:14px}.ttb-cart-fallback-header{align-items:center;background:#fff;border-bottom:7px solid #00a550;display:flex;justify-content:space-between;min-height:84px;padding:12px max(5vw,24px)}.ttb-cart-fallback-header img{display:block;height:52px;width:auto}.ttb-cart-fallback-header nav{display:flex;gap:18px}.ttb-cart-fallback-header nav a{color:#333;font-size:14px;font-weight:700}.ttb-cart-fallback-header nav a:hover{color:#00a550}.ttb-cart-fallback-header nav span{background:#ee5663;border-radius:50%;color:#fff;display:inline-grid;font-size:11px;height:17px;place-items:center;width:17px}.ttb-cart-fallback-footer{background:#fdf7f1;padding:36px 20px;text-align:center}.ttb-cart-fallback-footer img{height:47px;width:auto}.ttb-cart-fallback-footer p{color:#777;font-size:12px;margin:14px 0 0}@media(max-width:991px){.ttb-cart-layout{grid-template-columns:1fr}.ttb-cart-summary{max-width:none}}@media(max-width:767px){.ttb-cart-main{padding-top:15px}.ttb-cart-heading{align-items:flex-start;flex-direction:column;gap:18px}.ttb-cart-heading h1{font-size:19px}.ttb-cart-heading h1:after{top:17px}.ttb-cart-items>header{display:none}.ttb-cart-item{grid-template-columns:80px 1fr;padding:15px}.ttb-cart-book-image{height:104px}.ttb-cart-book-info>a{font-size:14px}.ttb-cart-unit-price,.ttb-cart-line-total{grid-column:2;text-align:left}.ttb-cart-quantity{grid-column:2;justify-content:flex-start}.ttb-cart-note{font-size:12px;padding:12px 15px}.ttb-cart-benefits{grid-template-columns:1fr}.ttb-cart-benefits>div+div{border-left:0;border-top:1px solid #e0eee4}.ttb-cart-fallback-header{align-items:flex-start;flex-direction:column;gap:13px}.ttb-cart-fallback-header nav{flex-wrap:wrap}}/* TTB_CART_REFERENCE_LAYOUT */
+.ttb-cart-page .ttb-cart-main{background:#fff;padding:14px 0 86px}.ttb-cart-page .ttb-cart-layout{grid-template-columns:minmax(0,658px) 312px;gap:38px;justify-content:start}.ttb-cart-page .ttb-cart-items{border-color:#e7e7e7}.ttb-cart-table-title{align-items:center;display:flex;justify-content:space-between;padding:14px 13px}.ttb-cart-table-title h1{font-size:16px;font-weight:700;margin:0}.ttb-cart-table-title a{color:#468def;font-size:12px}.ttb-cart-items>header{background:#f6f6f6;display:grid;grid-template-columns:32px minmax(0,1fr) 92px 94px 35px;padding:11px 12px;text-transform:none}.ttb-cart-items>header span{font-size:12px;text-align:right}.ttb-cart-items>header span:nth-of-type(1){font-size:14px;text-align:left}.ttb-cart-item{grid-template-columns:32px 76px minmax(0,1fr) 92px 94px 35px;gap:10px;padding:18px 12px;border-bottom:1px solid #ececec}.ttb-cart-select,.ttb-cart-select-all{align-items:center;cursor:pointer;display:flex;justify-content:center;margin:0}.ttb-cart-select input,.ttb-cart-select-all input{accent-color:#1bb34f;height:20px;margin:0;width:20px}.ttb-cart-book-image{height:78px;position:relative}.ttb-cart-book-image em{background:#ef5a62;color:#fff;font-size:10px;font-style:normal;left:0;padding:2px 5px;position:absolute;top:0}.ttb-cart-book-info{gap:4px}.ttb-cart-book-info>a{font-size:13px;line-height:1.3}.ttb-cart-book-info p,.ttb-cart-book-info small{color:#555;font-size:12px;line-height:1.3;margin:0}.ttb-cart-book-info small strong,.ttb-cart-line-total{color:#f33333;font-size:13px}.ttb-cart-book-info del{color:#aaa;margin-left:4px}.ttb-cart-control{display:flex;justify-content:center}.ttb-cart-control select{border:1px solid #aaa;border-radius:3px;color:#666;font-size:12px;height:29px;max-width:92px;padding:0 5px}.ttb-cart-quantity button,.ttb-cart-quantity input{height:27px}.ttb-cart-quantity button{width:27px}.ttb-cart-quantity input{width:30px}.ttb-cart-line-total{text-align:right}.ttb-cart-remove{align-self:center;border:1px solid #aaa;border-radius:3px;color:#777;height:26px;padding:0;width:26px}.ttb-cart-summary{border:0;border-radius:0;box-shadow:0 0 6px rgba(0,0,0,.18);margin-top:0;padding:26px 14px;position:relative}.ttb-cart-summary:before{background:#ddd;border-radius:5px;content:'';height:10px;left:-10px;position:absolute;right:-10px;top:-8px;z-index:-1}.ttb-cart-summary:after{background:radial-gradient(circle at 8px -1px,transparent 8px,#fafafa 8.5px) 0 100%/16px 16px repeat-x;bottom:-11px;content:'';height:12px;left:0;position:absolute;right:0}.ttb-cart-summary-row{font-size:13px;margin:0 0 13px}.ttb-cart-summary-row strong{font-size:13px}.ttb-cart-voucher{border:0;margin:0 0 13px;padding:0}.ttb-cart-voucher>div{display:flex}.ttb-cart-voucher i{border:1px solid #ddd;border-right:0;color:#aaa;padding:9px}.ttb-cart-voucher input{font-size:12px;padding:7px}.ttb-cart-voucher button{background:#1bb34f;color:#fff;padding:0 13px}.ttb-cart-summary-line{border-bottom:1px dashed #e3e3e3;color:#666;display:flex;font-size:12px;justify-content:space-between;padding:8px 0}.ttb-cart-summary-line b{font-weight:400}.ttb-cart-total{margin:17px 0 10px}.ttb-cart-total span{font-size:14px;font-weight:400;text-transform:none}.ttb-cart-total strong{font-size:21px}.ttb-cart-checkout{font-size:14px;margin:0;padding:10px}.ttb-cart-terms{color:#666;font-size:11px;line-height:1.45;margin:12px 0 0;text-align:center}.ttb-cart-page .ttb-cart-benefits{display:none}@media(max-width:991px){.ttb-cart-page .ttb-cart-layout{grid-template-columns:1fr}.ttb-cart-summary{margin-top:12px}}@media(max-width:640px){.ttb-cart-page .ttb-cart-item{grid-template-columns:26px 62px minmax(0,1fr) 30px}.ttb-cart-page .ttb-cart-items>header{grid-template-columns:26px 1fr 30px}.ttb-cart-page .ttb-cart-items>header span:nth-of-type(n+2),.ttb-cart-page .ttb-cart-control,.ttb-cart-page .ttb-cart-line-total{display:none}.ttb-cart-book-image{height:68px}.ttb-cart-book-info>a{font-size:12px}.ttb-cart-remove{grid-column:4;grid-row:1/3}}
+/* TTB_CART_COVER_FIT */
+.ttb-cart-page .ttb-cart-book-image{background:#fff;padding:4px}.ttb-cart-page .ttb-cart-book-image img{height:100%!important;max-height:100%;max-width:100%;object-fit:contain!important;width:100%!important}
+
+/* TTB_CART_CHECKBOX */
+.ttb-cart-page .ttb-cart-select input,.ttb-cart-page .ttb-cart-select-all input{height:1px!important;opacity:0!important;position:absolute!important;width:1px!important}.ttb-cart-page .ttb-cart-select span,.ttb-cart-page .ttb-cart-select-all span{background:#fff;border:1px solid #bfc3c6;border-radius:2px;display:block;height:20px;position:relative;width:20px}.ttb-cart-page .ttb-cart-select input:checked+span,.ttb-cart-page .ttb-cart-select-all input:checked+span{background:#18ae48;border-color:#18ae48}.ttb-cart-page .ttb-cart-select input:checked+span:after,.ttb-cart-page .ttb-cart-select-all input:checked+span:after{color:#fff;content:"✓";font-size:14px;font-weight:700;left:4px;position:absolute;top:0}
+
+/* TTB_CART_COVER_RATIO_FIX */
+.ttb-cart-page .ttb-cart-book-image{
+  align-self:center;
+  aspect-ratio:3 / 4;
+  height:104px;
+  overflow:hidden;
+  padding:0;
+  width:78px;
+}
+.ttb-cart-page .ttb-cart-book-image img{
+  display:block;
+  height:100%!important;
+  max-height:none!important;
+  max-width:none!important;
+  object-fit:contain!important;
+  width:100%!important;
+}
+.ttb-cart-page .ttb-cart-book-image em{
+  z-index:1;
+}
+@media(max-width:640px){
+  .ttb-cart-page .ttb-cart-book-image{height:84px;width:63px;}
+}
+/* TTB_CART_CONTAINER */
+.ttb-cart-page .container{
+  margin-left:auto;
+  margin-right:auto;
+  max-width:1296px!important;
+  width:100%;
+}
+@media(max-width:1327px){
+  .ttb-cart-page .container{max-width:calc(100% - 32px)!important;}
+}
+@media(max-width:640px){
+  .ttb-cart-page .container{max-width:calc(100% - 24px)!important;}
+}
+/* TTB_CART_GRID_FILL_CONTAINER */
+.ttb-cart-page .ttb-cart-layout{
+  grid-template-columns:minmax(0, 1fr) 312px;
+  width:100%;
+}
+/* TTB_CART_TYPOGRAPHY_PLUS_2 */
+.ttb-cart-page{font-size:16px;}
+.ttb-cart-page .ttb-cart-breadcrumb{font-size:16px;}
+.ttb-cart-page .ttb-cart-table-title h1{font-size:18px;}
+.ttb-cart-page .ttb-cart-table-title a{font-size:14px;}
+.ttb-cart-page .ttb-cart-items>header span{font-size:14px;}
+.ttb-cart-page .ttb-cart-items>header span:nth-of-type(1){font-size:16px;}
+.ttb-cart-page .ttb-cart-book-info>a{font-size:15px;}
+.ttb-cart-page .ttb-cart-book-info p,
+.ttb-cart-page .ttb-cart-book-info small{font-size:14px;}
+.ttb-cart-page .ttb-cart-book-info small strong,
+.ttb-cart-page .ttb-cart-line-total{font-size:15px;}
+.ttb-cart-page .ttb-cart-book-image em{font-size:12px;}
+.ttb-cart-page .ttb-cart-control select{font-size:14px;}
+.ttb-cart-page .ttb-cart-summary-row,
+.ttb-cart-page .ttb-cart-summary-row strong{font-size:15px;}
+.ttb-cart-page .ttb-cart-voucher input,
+.ttb-cart-page .ttb-cart-summary-line{font-size:14px;}
+.ttb-cart-page .ttb-cart-total span{font-size:16px;}
+.ttb-cart-page .ttb-cart-total strong{font-size:23px;}
+.ttb-cart-page .ttb-cart-checkout{font-size:16px;}
+.ttb-cart-page .ttb-cart-terms{font-size:13px;}
+.ttb-cart-page .ttb-footer-top,
+.ttb-cart-page .ttb-footer-main,
+.ttb-cart-page .ttb-footer-copyright{font-size:calc(1em + 2px);}
+/* TTB_CART_BOOK_TYPE_TAG */
+.ttb-cart-page .ttb-cart-book-image{
+  box-shadow:0 2px 2px rgba(0,0,0,.15);
+}
+.ttb-cart-page .ttb-cart-book-image em{
+  align-items:center;
+  background:#ef5e61;
+  border-bottom-left-radius:2px;
+  border-top-left-radius:2px;
+  color:#fff;
+  display:flex;
+  font-family:Roboto,Arial,sans-serif;
+  font-size:12px;
+  font-style:normal;
+  font-weight:400;
+  height:19px;
+  justify-content:center;
+  left:auto;
+  line-height:18px;
+  overflow:hidden;
+  padding:3px 4px;
+  right:0;
+  text-align:center;
+  top:0;
+}
+/* TTB_CART_VOUCHER_SINGLE_LINE */
+.ttb-cart-page .ttb-cart-voucher>div{
+  flex-wrap:nowrap;
+  width:100%;
+}
+.ttb-cart-page .ttb-cart-voucher input{
+  flex:1 1 auto;
+  min-width:0;
+}
+.ttb-cart-page .ttb-cart-voucher button{
+  flex:0 0 84px;
+  min-width:84px;
+  white-space:nowrap;
+}
+/* TTB_CART_TAG_ICON_AND_STICKY_SUMMARY */
+.ttb-cart-page .ttb-cart-book-image em{gap:4px;}
+.ttb-cart-page .ttb-cart-book-image em img{display:block;height:12px;object-fit:contain;width:12px!important;}
+.ttb-cart-page .ttb-cart-summary{position:sticky;top:24px;}
+@media(max-width:991px){.ttb-cart-page .ttb-cart-summary{position:relative;top:auto;}}
+/* TTB_CART_BOOK_TYPE_EXCLUDE_PIECE */
+.ttb-cart-page .ttb-cart-book-image em{
+  overflow:visible;
+  padding-left:4px;
+}
+.ttb-cart-page .ttb-cart-book-image em img{
+  height:20px;
+  left:-10px;
+  position:absolute;
+  top:0;
+  width:11px!important;
+}
+/* TTB_PAYMENT_AND_TRANSFER_PAGES */
+.ttb-payment-page,.ttb-transfer-page{background:#fff;color:#333;font-family:Arial,sans-serif;font-size:16px;}
+.ttb-payment-page .container,.ttb-transfer-page .container{margin-left:auto;margin-right:auto;max-width:1296px!important;width:100%;}
+.ttb-checkout-main{min-height:660px;padding:18px 0 88px;}
+.ttb-checkout-breadcrumb{align-items:center;color:#4c86f7;display:flex;font-size:15px;gap:9px;margin:0 0 20px;}
+.ttb-checkout-breadcrumb a{color:#4c86f7;}
+.ttb-checkout-heading{border-bottom:1px solid #dedede;margin-bottom:24px;padding-bottom:14px;}
+.ttb-checkout-heading h1{color:#00a550;font-size:24px;font-weight:700;margin:0 0 5px;}
+.ttb-checkout-heading p{color:#777;font-size:15px;margin:0;}
+.ttb-checkout-grid,.ttb-transfer-grid{align-items:start;display:grid;gap:38px;grid-template-columns:minmax(0,1fr) 312px;}
+.ttb-checkout-card,.ttb-transfer-card{background:#fff;border:1px solid #e2e2e2;border-radius:5px;padding:22px;}
+.ttb-checkout-card h2,.ttb-transfer-card h2{font-size:18px;font-weight:700;margin:0 0 18px;}
+.ttb-checkout-fields{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr));}
+.ttb-checkout-fields label{color:#444;display:grid;font-size:14px;font-weight:700;gap:7px;margin:0;}
+.ttb-checkout-fields input,.ttb-checkout-fields textarea{border:1px solid #d7d7d7;border-radius:3px;color:#333;font-size:15px;font-weight:400;padding:11px 12px;width:100%;}
+.ttb-checkout-fields textarea{resize:vertical;}
+.ttb-field-wide{grid-column:1/-1;}
+.ttb-payment-methods{border-top:1px solid #ececec;margin-top:25px;padding-top:22px;}
+.ttb-payment-methods h2{margin-bottom:13px;}
+.ttb-payment-method{align-items:center;border:1px solid #e1e1e1;border-radius:4px;cursor:pointer;display:flex;gap:12px;margin:10px 0 0;padding:13px;}
+.ttb-payment-method.active,.ttb-payment-method:has(input:checked){border-color:#00a550;background:#f7fcf8;}
+.ttb-payment-method input{accent-color:#00a550;height:18px;margin:0;width:18px;}
+.ttb-method-icon{align-items:center;background:#eaf8ee;border-radius:50%;color:#00a550;display:inline-flex;height:34px;justify-content:center;width:34px;}
+.ttb-payment-method strong,.ttb-payment-method small{display:block;}
+.ttb-payment-method strong{font-size:15px;}
+.ttb-payment-method small{color:#777;font-size:13px;margin-top:3px;}
+.ttb-payment-summary{box-shadow:0 0 6px rgba(0,0,0,.13);position:sticky;top:24px;}
+.ttb-payment-product{border-bottom:1px solid #e7e7e7;display:grid;gap:10px;grid-template-columns:52px minmax(0,1fr);padding-bottom:16px;position:relative;}
+.ttb-payment-product img{height:70px;object-fit:contain;width:52px;}
+.ttb-payment-product strong{display:block;font-size:14px;line-height:1.35;padding-right:5px;}
+.ttb-payment-product span{color:#777;display:block;font-size:13px;margin-top:5px;}
+.ttb-payment-product b{bottom:16px;color:#f33232;font-size:15px;position:absolute;right:0;}
+.ttb-payment-summary-line,.ttb-transfer-order-row{border-bottom:1px dashed #e0e0e0;display:flex;font-size:14px;justify-content:space-between;padding:13px 0;}
+.ttb-payment-summary-line b{font-weight:600;}
+.ttb-payment-total,.ttb-transfer-total{align-items:center;display:flex;justify-content:space-between;padding:17px 0;}
+.ttb-payment-total span,.ttb-transfer-total span{font-size:16px;}
+.ttb-payment-total strong,.ttb-transfer-total strong{color:#f33232;font-size:22px;}
+.ttb-payment-confirm,.ttb-transfer-home{align-items:center;background:#f42d2d;border:1px solid #f42d2d;color:#fff;display:flex;font-size:15px;font-weight:700;gap:8px;justify-content:center;padding:12px;text-transform:uppercase;}
+.ttb-payment-confirm:hover,.ttb-transfer-home:hover{background:#cf2525;border-color:#cf2525;color:#fff;}
+.ttb-return-cart{color:#4c86f7;display:block;font-size:14px;margin-top:15px;text-align:center;}
+.ttb-transfer-wrap{max-width:980px;}
+.ttb-transfer-status{align-items:flex-start;background:#f2fbf5;border:1px solid #d9efdf;border-radius:5px;display:flex;gap:15px;margin-bottom:25px;padding:20px;}
+.ttb-transfer-status>span{align-items:center;background:#00a550;border-radius:50%;color:#fff;display:flex;flex:0 0 auto;height:36px;justify-content:center;width:36px;}
+.ttb-transfer-status h1{font-size:22px;font-weight:700;margin:0 0 5px;}
+.ttb-transfer-status p{color:#555;font-size:15px;line-height:1.45;margin:0;}
+.ttb-bank-brand{align-items:center;background:#f7faf8;border-radius:4px;display:flex;gap:11px;margin-bottom:15px;padding:13px;}
+.ttb-bank-brand i{color:#00a550;font-size:24px;}
+.ttb-bank-brand strong,.ttb-bank-brand span{display:block;}
+.ttb-bank-brand span{color:#777;font-size:13px;margin-top:2px;}
+.ttb-bank-details{margin:0;}
+.ttb-bank-details>div{border-top:1px solid #ececec;display:grid;gap:16px;grid-template-columns:150px minmax(0,1fr);padding:13px 0;}
+.ttb-bank-details dt{color:#777;font-size:14px;font-weight:400;}
+.ttb-bank-details dd{font-size:15px;font-weight:700;margin:0;}
+.ttb-copy-value{align-items:center;display:flex;gap:8px;}
+.ttb-copy-value button{background:transparent;border:0;color:#00a550;padding:0;}
+.ttb-copy-value button.is-copied{color:#f33232;}
+.ttb-bank-price{color:#f33232;}
+.ttb-transfer-note{background:#fff8ed;border-left:3px solid #f6a623;color:#6d5b3f;font-size:14px;line-height:1.45;margin:17px 0 0;padding:12px;}
+.ttb-transfer-note i{color:#f6a623;margin-right:5px;}
+.ttb-transfer-order{background:#fafafa;box-shadow:0 0 6px rgba(0,0,0,.1);}
+.ttb-transfer-home{margin-top:4px;text-transform:none;}
+@media(max-width:1327px){.ttb-payment-page .container,.ttb-transfer-page .container{max-width:calc(100% - 32px)!important;}}
+@media(max-width:991px){.ttb-checkout-grid,.ttb-transfer-grid{grid-template-columns:1fr;}.ttb-payment-summary{position:relative;top:auto;}.ttb-transfer-wrap{max-width:none;}}
+@media(max-width:640px){.ttb-payment-page .container,.ttb-transfer-page .container{max-width:calc(100% - 24px)!important;}.ttb-checkout-main{padding-top:15px;}.ttb-checkout-breadcrumb{gap:6px;overflow-x:auto;padding-bottom:3px;scrollbar-width:none;white-space:nowrap;}.ttb-checkout-breadcrumb::-webkit-scrollbar{display:none;}.ttb-checkout-fields{grid-template-columns:1fr;}.ttb-field-wide{grid-column:auto;}.ttb-checkout-card,.ttb-transfer-card{padding:16px;}.ttb-bank-details>div{gap:5px;grid-template-columns:1fr;}.ttb-payment-product b{position:static;}.ttb-payment-product{grid-template-columns:52px minmax(0,1fr);}.ttb-transfer-status{padding:15px;}.ttb-transfer-status h1{font-size:19px;}}
+/* TTB_CART_TABLET_SINGLE_COLUMN_FIX */
+@media(max-width:991px){.ttb-cart-page .ttb-cart-layout{grid-template-columns:minmax(0,1fr);}.ttb-cart-page .ttb-cart-summary{margin-top:12px;}}
+
+/* TTB_PAYMENT_REFERENCE_REBUILD */
+.ttb-payment-reference{padding:14px 0 92px;}
+.ttb-payment-reference .ttb-checkout-breadcrumb{border-bottom:1px solid #ececec;margin-bottom:26px;padding-bottom:14px;}
+.ttb-payment-layout{align-items:start;display:grid;gap:38px;grid-template-columns:minmax(0,1fr) 312px;}
+.ttb-payment-body{min-width:0;}
+.ttb-payment-title-row{align-items:center;display:flex;justify-content:space-between;margin-bottom:18px;}
+.ttb-payment-title-row h1{font-size:18px;font-weight:700;margin:0;}
+.ttb-payment-title-row p{color:#777;font-size:12px;margin:0;text-transform:uppercase;}
+.ttb-payment-title-row a,.ttb-pay-method>a{color:#4c86f7;text-transform:none;}
+.ttb-pay-methods{display:grid;gap:18px;grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:22px;}
+.ttb-pay-method{align-items:center;border:1px solid transparent;border-radius:4px;cursor:pointer;display:flex;flex-direction:column;min-height:168px;padding:13px 8px;position:relative;text-align:center;}
+.ttb-pay-method.is-active,.ttb-pay-method:has(input:checked){border-color:#17b34b;}
+.ttb-pay-method input{height:1px;opacity:0;position:absolute;width:1px;}
+.ttb-pay-check{align-items:center;background:#10a93f;border-radius:50%;color:#fff;display:none;font-size:14px;height:26px;justify-content:center;position:absolute;right:-13px;top:-10px;width:26px;}
+.ttb-pay-method.is-active .ttb-pay-check,.ttb-pay-method:has(input:checked) .ttb-pay-check{display:flex;}
+.ttb-pay-icon{align-items:center;background:#fff;border:1px solid #e0e0e0;border-radius:5px;color:#3e4dc4;display:flex;font-size:28px;height:54px;justify-content:center;margin-bottom:10px;width:54px;}
+.ttb-pay-icon-cod{background:#4b56c8;color:#fff;font-size:20px;font-weight:700;}
+.ttb-pay-method strong{font-size:13px;line-height:1.35;max-width:150px;}
+.ttb-pay-method small{color:#999;display:block;font-size:12px;line-height:1.35;margin-top:6px;}
+.ttb-pay-method>a{font-size:11px;margin-top:5px;}
+.ttb-recipient-panel,.ttb-invoice-panel{background:#f7f7f7;border-radius:4px;padding:14px;}
+.ttb-recipient-panel h2{border-bottom:1px solid #ddd;font-size:17px;font-weight:700;margin:0 0 13px;padding-bottom:11px;}
+.ttb-recipient-grid{display:grid;gap:12px 14px;grid-template-columns:repeat(2,minmax(0,1fr));}
+.ttb-field-wide{grid-column:1/-1;}
+.ttb-recipient-grid label{margin:0;position:relative;}
+.ttb-recipient-grid input,.ttb-recipient-grid select,.ttb-invoice-panel input,.ttb-invoice-panel textarea{background:#fff;border:1px solid #d8d8d8;border-radius:3px;color:#444;font-size:13px;min-height:38px;padding:8px 12px;width:100%;}
+.ttb-recipient-grid select{appearance:auto;}
+.ttb-input-with-icon>i{color:#aaa;font-size:14px;left:12px;position:absolute;top:12px;z-index:1;}
+.ttb-input-with-icon input,.ttb-input-with-icon select{padding-left:38px;}
+.ttb-invoice-toggle{align-items:center;cursor:pointer;display:flex;gap:10px;margin:20px 0 14px;}
+.ttb-invoice-toggle input{height:1px;opacity:0;position:absolute;width:1px;}
+.ttb-invoice-toggle span{align-items:center;background:#18b34b;border-radius:2px;color:#fff;display:flex;height:20px;justify-content:center;width:20px;}
+.ttb-invoice-toggle input:not(:checked)+span{background:#fff;border:1px solid #bbb;color:transparent;}
+.ttb-invoice-toggle strong{font-size:16px;}
+.ttb-invoice-panel{display:grid;gap:12px;padding:15px;}
+.ttb-invoice-panel[hidden]{display:none;}
+.ttb-invoice-panel label{align-items:center;display:grid;gap:16px;grid-template-columns:165px minmax(0,1fr);margin:0;}
+.ttb-invoice-panel label strong{font-size:13px;}
+.ttb-invoice-panel textarea{resize:vertical;}
+.ttb-payment-receipt{background:#fff;box-shadow:0 0 7px rgba(0,0,0,.13);padding:28px 14px 24px;position:sticky;top:24px;}
+.ttb-payment-receipt:after{background:radial-gradient(circle at 8px -1px,transparent 8px,#fff 8.5px) 0 100%/16px 16px repeat-x;bottom:-11px;content:"";height:12px;left:0;position:absolute;right:0;}
+.ttb-receipt-cap{background:#ddd;border-radius:6px;height:10px;left:-10px;position:absolute;right:-10px;top:-8px;z-index:-1;}
+.ttb-receipt-line{align-items:center;display:flex;font-size:14px;justify-content:space-between;padding:11px 0;}
+.ttb-receipt-line strong{font-weight:600;}
+.ttb-receipt-voucher{display:grid;grid-template-columns:38px minmax(0,1fr) 84px;margin:4px 0;}
+.ttb-receipt-voucher i{align-items:center;border:1px solid #ddd;border-right:0;color:#aaa;display:flex;justify-content:center;}
+.ttb-receipt-voucher input{border:1px solid #ddd;font-size:13px;min-width:0;padding:9px;}
+.ttb-receipt-voucher button{background:#19ad4c;border:1px solid #19ad4c;color:#fff;font-size:14px;}
+.ttb-receipt-total{align-items:center;border-top:1px dashed #ddd;display:flex;justify-content:space-between;margin-top:6px;padding:17px 0 12px;}
+.ttb-receipt-total span{font-size:15px;}
+.ttb-receipt-total strong{color:#f32e31;font-size:23px;}
+.ttb-payment-buy{background:#f3262c;border:1px solid #f3262c;color:#fff;display:block;font-size:16px;font-weight:700;padding:11px;text-align:center;}
+.ttb-payment-buy:hover{background:#d91f25;color:#fff;}
+.ttb-payment-receipt>p{color:#666;font-size:11px;line-height:1.5;margin:15px 4px 0;text-align:center;}
+@media(max-width:991px){
+  .ttb-payment-layout{grid-template-columns:1fr;}
+  .ttb-payment-receipt{position:relative;top:auto;}
+}
+@media(max-width:720px){
+  .ttb-payment-title-row{align-items:flex-start;flex-direction:column;gap:8px;}
+  .ttb-pay-methods{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .ttb-recipient-grid{grid-template-columns:1fr;}
+  .ttb-field-wide{grid-column:auto;}
+  .ttb-invoice-panel label{gap:6px;grid-template-columns:1fr;}
+}
+
+/* TTB_TRANSFER_REFERENCE_REBUILD */
+.ttb-transfer-reference{padding:14px 0 92px}.ttb-transfer-reference .ttb-checkout-breadcrumb{border-bottom:1px solid #ececec;margin-bottom:26px;padding-bottom:14px}.ttb-transfer-reference-layout{align-items:start;display:grid;gap:38px;grid-template-columns:minmax(0,1fr) 312px}.ttb-transfer-reference-card{border:1px solid #ddd;border-radius:10px;padding:20px 22px 24px}.ttb-transfer-reference-card>h1{font-size:17px;font-weight:700;margin:0 0 18px}.ttb-transfer-qr-block{align-items:center;display:grid;gap:32px;grid-template-columns:330px minmax(0,1fr)}.ttb-transfer-qr{align-items:center;display:flex;justify-content:center}.ttb-transfer-qr img{display:block;height:285px;max-width:100%;width:285px}.ttb-transfer-guide h2{font-size:19px;line-height:1.25;margin:0 0 25px}.ttb-transfer-guide h2 i{margin-right:5px}.ttb-transfer-help{color:#4384ff;display:inline-flex;font-size:13px;gap:8px;margin-bottom:14px}.ttb-transfer-actions{display:grid;gap:12px;grid-template-columns:1fr 1fr;margin-bottom:12px}.ttb-transfer-actions a,.ttb-transfer-actions button{align-items:center;background:#fff;border:1px solid #ddd;border-radius:5px;color:#777;display:flex;font:inherit;justify-content:center;min-height:34px}.ttb-transfer-guide p{background:#f3f3f3;border-radius:6px;color:#555;font-size:12px;line-height:1.45;margin:0;padding:10px}.ttb-transfer-divider{border-top:1px dashed #ddd;margin:18px 0 16px;position:relative}.ttb-transfer-divider span{background:#fff;font-size:13px;font-weight:600;padding-right:10px;position:relative;top:-9px}.ttb-transfer-code-box{background:#fffaf0;border-radius:5px;margin-bottom:14px;padding:14px}.ttb-transfer-code-box>strong,.ttb-transfer-code-box small{color:#414fe8;display:block;font-size:13px}.ttb-transfer-code-box>div{align-items:center;background:#fff;border:1px dashed #8bd8ad;display:flex;height:40px;justify-content:center;margin:7px 0}.ttb-transfer-code-box b{color:#f13439;font-size:22px;letter-spacing:4px}.ttb-transfer-code-box button,.ttb-transfer-bank-list button{background:none;border:0;color:#3378ff;cursor:pointer;font-size:17px;margin-left:auto}.ttb-transfer-bank-list{display:grid;gap:12px;margin:0}.ttb-transfer-bank-list>div{align-items:center;display:grid;gap:14px;grid-template-columns:90px minmax(0,1fr)}.ttb-transfer-bank-list dt{font-size:14px}.ttb-transfer-bank-list dd{align-items:center;background:#f6f6f6;border-radius:5px;display:flex;font-size:14px;min-height:38px;margin:0;padding:0 14px}.ttb-transfer-bank-list dd strong{font-weight:700}.ttb-bac-a-mark{font-size:11px;font-weight:800;margin-left:auto}.ttb-transfer-receipt{position:sticky;top:16px}.ttb-transfer-receipt .ttb-receipt-line{font-size:13px}.ttb-transfer-complete,.ttb-transfer-back-home{align-items:center;border-radius:4px;display:flex;font-weight:700;justify-content:center;text-align:center;width:100%}.ttb-transfer-complete{background:#22b45e;border:0;color:#fff;cursor:pointer;flex-direction:column;font-size:14px;min-height:50px}.ttb-transfer-complete small{font-size:11px;font-weight:500}.ttb-transfer-back-home{background:#f3f3f3;border:1px solid #ccc;color:#555;margin-top:8px;min-height:38px}.is-copied{color:#11a952!important}.ttb-transfer-receipt>p{text-align:center}
+@media(max-width:991px){.ttb-transfer-reference-layout{grid-template-columns:1fr}.ttb-transfer-reference .ttb-payment-receipt{position:relative;top:auto}}
+@media(max-width:720px){.ttb-transfer-reference-card{padding:16px}.ttb-transfer-qr-block{grid-template-columns:1fr}.ttb-transfer-qr img{height:auto;width:min(285px,100%)}.ttb-transfer-bank-list>div{gap:6px;grid-template-columns:1fr}}
+
+/* TTB_VNPAY_SVG_LOGO */
+.ttb-pay-icon.ttb-pay-logo-vnpay{border:0;height:60px;width:60px}
+.ttb-pay-logo-vnpay img{display:block;height:60px;width:60px}
+
+/* TTB_HEADER_PRIMARY_ACTION_ICONS */
+.section_header .header_button.cart>a>img,.section_header .header_button.account>a>img,.section_header-mobile .header_button.cart>a>img,.section_header-mobile .header_button.account>a>img{filter:brightness(0) saturate(100%) invert(42%) sepia(98%) saturate(1193%) hue-rotate(119deg) brightness(90%) contrast(104%)}
+
+/* TTB_DESKTOP_HEADER_PRIMARY_ACTIONS */
+.section_header .header_button.cart>a,.section_header .header_button.account>a{border-color:#00b346!important;color:#00b346!important;transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease,color .2s ease,transform .2s ease}
+.section_header .header_button.cart>a:hover,.section_header .header_button.account>a:hover{background:#effaf3!important;border-color:#009b49!important;box-shadow:0 5px 14px rgba(0,179,70,.16);color:#009b49!important;transform:translateY(-1px)}
