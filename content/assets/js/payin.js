@@ -1,0 +1,1 @@
+(function(){'use strict';document.querySelector('.ttb-payin-form')?.addEventListener('submit',function(event){event.preventDefault();});})();
