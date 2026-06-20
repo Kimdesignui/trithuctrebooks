@@ -24,15 +24,24 @@
   }
   function init(){
     var readingMode=/\/customer\/reading-book\/?$/i.test(location.pathname);
+    var purchasedMode=/\/customer\/purchased-book\/?$/i.test(location.pathname);
     document.querySelectorAll('.ttb-purchased-card').forEach(function(card,index){
       var initialBadge=card.querySelector('.ttb-purchased-badge');
       if(readingMode&&initialBadge&&initialBadge.textContent.trim().toLowerCase()==='video'){card.remove();return;}
       var days=card.querySelector('.ttb-purchased-days');
       var action=card.querySelector('.ttb-book-action');
       var badge=card.querySelector('.ttb-purchased-badge');
-      var isPaper=!readingMode&&paperBookIndexes.indexOf(index)>-1;
+      var isPaper=purchasedMode&&paperBookIndexes.indexOf(index)>-1;
       setTarget(card.querySelector('.ttb-purchased-cover'),detailUrl,false);
       if(!action)return;
+      if(purchasedMode){
+        if(isPaper&&badge){badge.textContent='Sách giấy';badge.className='ttb-purchased-badge paper';}
+        action.textContent='Xem chi tiết';
+        action.className='ttb-book-action purple';
+        setTarget(action,detailUrl,false);
+        if(days)days.remove();
+        return;
+      }
       if(isPaper){
         if(badge){badge.textContent='Sách giấy';badge.className='ttb-purchased-badge paper';}
         action.textContent='Xem chi tiết';
@@ -47,6 +56,17 @@
       else if(text.indexOf('đọc')>-1)setTarget(action,readUrl,true);
       else setTarget(action,detailUrl,false);
     });
+    if(purchasedMode){
+      document.querySelectorAll('.ttb-recent-meta span').forEach(function(item){
+        if(item.textContent.toLowerCase().indexOf('còn')>-1)item.remove();
+      });
+      var recentProgress=document.querySelector('.ttb-reading-progress');
+      if(recentProgress)recentProgress.remove();
+      var recentActions=document.querySelector('.ttb-recent-actions');
+      if(recentActions){
+        recentActions.innerHTML='<a class="ttb-action-purple" href="'+detailUrl+'">Xem chi tiết</a>';
+      }
+    }
     document.querySelectorAll('.ttb-recent-actions a').forEach(function(link){
       var text=link.textContent.trim().toLowerCase();
       if(text.indexOf('đọc')>-1)setTarget(link,readUrl,true);
@@ -63,7 +83,7 @@
       if(videoAction)videoAction.remove();
     }
     var recent=document.querySelector('.ttb-reading-progress');
-    if(recent){recent.innerHTML='';recent.appendChild(createProgress(93));}
+    if(readingMode&&recent){recent.innerHTML='';recent.appendChild(createProgress(93));}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
