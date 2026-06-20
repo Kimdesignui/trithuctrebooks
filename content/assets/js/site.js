@@ -1557,4 +1557,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('a[href="checkout-cart.html"]').forEach(function (link) {
         link.setAttribute('href', 'cart-full.html');
     });
+});/* TTB_SOCIAL_LINKS */
+document.addEventListener('DOMContentLoaded',function(){
+var links={facebook:'https://www.facebook.com/shop.trithuctrebooks',messenger:'https://m.me/shop.trithuctrebooks',tiktok:'https://www.tiktok.com/@trithuctrebooksvn',instagram:'https://www.instagram.com/trithuctre_books',youtube:'https://www.youtube.com/@TriThucTreBooks'};
+document.querySelectorAll('.ttb-footer-follow a,.ttb-footer-marketplaces a,.contact-item a').forEach(function(a){var i=a.querySelector('i'),im=a.querySelector('img'),c=i?i.className:'',l=(a.getAttribute('aria-label')||(im&&im.alt)||'').toLowerCase(),n=/messenger/.test(c)?'messenger':/facebook/.test(c)||/facebook/.test(l)?'facebook':/instagram/.test(c)||/instagram/.test(l)?'instagram':/youtube/.test(c)||/youtube/.test(l)?'youtube':/tiktok/.test(c)||/tiktok/.test(l)?'tiktok':'';if(n){a.href=links[n];a.target='_blank';a.rel='noopener noreferrer';}});
+document.querySelectorAll('.contact-item').forEach(function(x){var i=x.querySelector('i'),t=x.querySelector('.tooltiptext');if(i&&/messenger/.test(i.className)&&t)t.textContent='Nha Sach Tri Thuc Tre';});
 });
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.ttb-footer-follow ul').forEach(function(u){if(u.querySelector('.fa-tiktok'))return;var x=document.createElement('li');x.innerHTML='<a href="https://www.tiktok.com/@trithuctrebooksvn" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>';u.appendChild(x);});document.querySelectorAll('.contact-item').forEach(function(x){var i=x.querySelector('i'),t=x.querySelector('.tooltiptext');if(i&&/messenger/.test(i.className)&&t)t.innerHTML='Nh&agrave; S&aacute;ch Tri Th&#7913;c Tr&#7867;';});});
