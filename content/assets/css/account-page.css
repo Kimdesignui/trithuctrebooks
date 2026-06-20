@@ -13,6 +13,7 @@
 .ttb-account-menu li:last-child a{border-bottom:0}
 .ttb-account-menu i{width:16px;text-align:center}
 .ttb-account-menu .active a{font-weight:700}
+.ttb-account-menu li:not(.active) a .fa-chevron-right{display:none}
 .ttb-account-menu .package i{color:#ff9700}
 .ttb-account-content{min-width:0}
 .ttb-account-balances{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px}
