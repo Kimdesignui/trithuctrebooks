@@ -3,7 +3,7 @@
 .ttb-account-breadcrumb{display:flex;align-items:center;gap:10px;padding:16px 0 12px;border-bottom:1px solid #eee;color:#888;font-size:14px}
 .ttb-account-breadcrumb a{color:#4385ff}
 .ttb-account-title{margin:14px 0 28px;font-size:22px;font-weight:700;color:#333}
-.ttb-account-layout{display:grid;grid-template-columns:244px minmax(0,540px);gap:34px;align-items:start}
+.ttb-account-layout{display:grid;grid-template-columns:25% 50% 25%;gap:0;align-items:start}.ttb-account-sidebar{grid-column:1;width:calc(100% - 28px)}.ttb-account-content{grid-column:2;width:100%}
 .ttb-account-sidebar,.ttb-account-balance,.ttb-account-form{border:1px solid #ddd;border-radius:5px;background:#fff}
 .ttb-account-sidebar{overflow:hidden}
 .ttb-account-user{display:flex;align-items:center;gap:10px;padding:15px 18px;background:#fafafa;font-weight:700}
@@ -31,10 +31,11 @@
 .ttb-account-save:hover{background:#d92528}
 .ttb-account-notice{display:none;margin:14px 0 0;text-align:center;color:#12a751;font-weight:600}
 .ttb-account-notice.show{display:block}
+@media(max-width:991px) and (min-width:768px){.ttb-account-layout{grid-template-columns:32% 68%}.ttb-account-sidebar{width:calc(100% - 20px)}.ttb-account-content{grid-column:2}}
 @media(max-width:767px){
   .ttb-account-page{padding-bottom:48px}
   .ttb-account-title{margin-bottom:20px}
-  .ttb-account-layout{grid-template-columns:1fr;gap:20px}
+  .ttb-account-layout{grid-template-columns:1fr;gap:20px}.ttb-account-sidebar,.ttb-account-content{grid-column:1;width:100%}
   .ttb-account-balances{grid-template-columns:1fr;gap:14px}
   .ttb-account-form{padding:22px 16px 34px}
 }
