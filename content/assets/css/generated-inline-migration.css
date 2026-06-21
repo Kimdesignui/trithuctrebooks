@@ -7703,8 +7703,8 @@ textarea {
   }
 
   .section_header .header_button.cart .button_notification {
-    top: -6px !important;
-    right: -6px !important;
+    top: 0px !important;
+    right: 0px !important;
     left: auto !important;
     z-index: 2 !important;
   }
