@@ -573,3 +573,73 @@ footer {
 
 /* TTB_GLOBAL_INTERACTION_STATES */
 :where(button,.btn,.ttb-order-action,.ttb-book-action,.ttb-action-green,.ttb-action-blue,.ttb-action-purple,.ttb-action-red,.ttb-action-orange,.ttb-password-submit,.ttb-payin-submit,.ttb-cart-checkout,.ttb-payment-confirm):not(:disabled){transition:transform .18s ease,filter .18s ease,box-shadow .18s ease,background-color .18s ease,color .18s ease,border-color .18s ease}:where(button,.btn,.ttb-order-action,.ttb-book-action,.ttb-action-green,.ttb-action-blue,.ttb-action-purple,.ttb-action-red,.ttb-action-orange,.ttb-password-submit,.ttb-payin-submit,.ttb-cart-checkout,.ttb-payment-confirm):not(:disabled):hover{filter:brightness(.96);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.12)}:where(button,.btn,.ttb-order-action,.ttb-book-action,.ttb-action-green,.ttb-action-blue,.ttb-action-purple,.ttb-action-red,.ttb-action-orange,.ttb-password-submit,.ttb-payin-submit,.ttb-cart-checkout,.ttb-payment-confirm):not(:disabled):active{transform:translateY(0);box-shadow:none}.main-menu a,.menu_list-wrap a,.menu_list-mobile a,.menu_category .category_link,.ttb-account-menu a,.ttb-footer-main a,.ttb-footer-top a{transition:color .18s ease,background-color .18s ease,transform .18s ease,opacity .18s ease}.main-menu a:hover{color:#dff8e8;text-shadow:0 1px 0 rgba(0,0,0,.14)}.menu_category .category_link:hover{background:#edf9f0;color:#0b9e46}.menu_list-mobile a:hover{background:#edf9f0;color:#0b9e46}.ttb-account-menu li:not(.ttb-account-logout) a:hover{color:#0b9e46;background:#f3fbf5}.ttb-footer-main a:hover,.ttb-footer-top a:hover{color:#0b9e46}.ttb-account-menu a:focus-visible,.main-menu a:focus-visible,.menu_category a:focus-visible,.ttb-footer-main a:focus-visible,.ttb-footer-top a:focus-visible,button:focus-visible{outline:3px solid rgba(18,167,81,.32);outline-offset:2px}
+/* TTB_COMBO_DETAIL_ACTIONS */
+.ttb-combo-detail-page .ttb-detail-cover-card .ttb-detail-read-actions {
+  display: none;
+}
+.ttb-combo-detail-page .ttb-combo-book-list td:last-child > a,
+.ttb-combo-detail-page .ttb-combo-book-list td:last-child > button {
+  width: 86px;
+  min-width: 86px;
+  height: 32px;
+  padding: 0 8px;
+  white-space: nowrap;
+}
+.ttb-combo-detail-page .ttb-combo-book-list tbody tr:first-child td:last-child > a {
+  border-color: #18a84d;
+  background: #18a84d;
+}
+.ttb-combo-detail-page .ttb-combo-book-list tbody tr:first-child td:last-child > a:hover {
+  border-color: #118b3e;
+  background: #118b3e;
+}
+.ttb-combo-detail-page .ttb-combo-book-list tbody tr:nth-child(2) td:last-child > button {
+  border-color: #2f80ed;
+  background: #2f80ed;
+}
+
+/* TTB_COMBO_DETAIL_MOBILE_FIT */
+@media (max-width: 575.98px) {
+  .ttb-combo-detail-page .ttb-detail-top,
+  .ttb-combo-detail-page .ttb-detail-gallery,
+  .ttb-combo-detail-page .ttb-detail-cover-card,
+  .ttb-combo-detail-page .ttb-detail-info {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .ttb-combo-detail-page .ttb-detail-gallery {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .ttb-combo-detail-page .ttb-detail-thumbs {
+    gap: 10px;
+  }
+
+  .ttb-combo-detail-page .ttb-detail-thumbs img {
+    width: 46px;
+    height: 64px;
+  }
+
+  .ttb-combo-detail-page .ttb-detail-cover-card {
+    min-height: 0;
+    padding: 24px 12px 28px;
+  }
+
+  .ttb-combo-detail-page .ttb-detail-cover-open {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ttb-combo-detail-page .ttb-detail-cover-open > img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  .ttb-combo-detail-page .ttb-combo-book-list {
+    overflow-x: auto;
+  }
+}

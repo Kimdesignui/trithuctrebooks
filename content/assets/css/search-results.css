@@ -1,0 +1,19 @@
+.ttb-search-result-summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 46px;
+  margin: 0 0 18px;
+  padding: 10px 16px;
+  border-radius: 3px;
+  background: #f7f7f7;
+  color: #4c4c4c;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.ttb-search-result-summary i { color: #666; }
+.ttb-search-result-summary strong { font-weight: 600; }
+.ttb-search-result-summary b { color: #ef5e61; font-weight: 600; }
+@media (max-width: 575px) {
+  .ttb-search-result-summary { align-items: flex-start; flex-wrap: wrap; }
+}

@@ -93,7 +93,7 @@ function ttbSharedComboCard(item, index) {
     ];
     var type = typeList[index % typeList.length];
     return [
-        '<a href="tuyen-tap-hay-nhat.html" title="' + item[0] + '">',
+        '<a href="chi-tiet-combo.html" title="' + item[0] + '">',
         '<div class="collection-slider_item">',
         '<div class="item-img ttb-book-visual">',
         '<img src="' + item[1] + '" alt="' + item[0] + '" loading="lazy">',
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function productCard(item, isCombo) {
         return [
-            '<a href="' + (isCombo ? 'tuyen-tap-hay-nhat.html' : 'trang-chi-tiet-sach.html') + '" title="' + item[0] + '">',
+            '<a href="' + (isCombo ? 'chi-tiet-combo.html' : 'trang-chi-tiet-sach.html') + '" title="' + item[0] + '">',
             '<div class="collection-slider_item">',
             '<div class="item-img ttb-book-visual"><img src="' + item[1] + '" alt="' + item[0] + '" loading="lazy">' + detailBookTypeTag(item) + '</div>',
             '<div class="item-content">',
@@ -1355,7 +1355,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    var collectionTarget = 'tuyen-tap-hay-nhat.html';
+    var collectionTarget = 'chi-tiet-combo.html';
     var bookTarget = 'trang-chi-tiet-sach.html';
     var collectionPattern = /(?:^|\s|[-–—:;,()[\]])(?:combo|tuyển\s+tập|bộ\s+sách)(?=$|\s|[-–—:;,()[\]])/i;
 
@@ -1396,7 +1396,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.querySelectorAll('a[href*="bo-pham-cach-3-cuon-c47.html"]').forEach(function (link) {
-        link.setAttribute('href', 'tuyen-tap-hay-nhat.html');
+        link.setAttribute('href', 'chi-tiet-combo.html');
     });
 
     document.querySelectorAll('.main-menu a').forEach(function (link) {
@@ -1419,7 +1419,9 @@ document.addEventListener('DOMContentLoaded', function () {
         ));
         var pointsToNews = /(?:tin-tuc(?:\.html|-n\d+\.html)?|\/blogs\/news\/|(?:^|\/)[^/]*-n\d+\.html)/i.test(href);
 
-        if (isNavbarNews || (isNewsItem && pointsToNews)) {
+        var isViewAll = /xem\s+(?:tất\s*cả|toàn\s*bộ)/i.test(label);
+
+        if (isNavbarNews || (isNewsItem && pointsToNews && !isViewAll)) {
             link.setAttribute('href', newsTarget);
         }
     });
@@ -1434,7 +1436,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     main.className = 'ttb-news-detail';
     main.innerHTML = [
-        '<div class="category_wrapper-breadcrum"><div class="container"><div class="ttb-detail-breadcrumb"><a href="index.html"><i class="far fa-home"></i></a><span>/</span><span>Chi tiết tin</span></div></div></div>',
+        '<div class="category_wrapper-breadcrum"><div class="container"><div class="ttb-detail-breadcrumb"><a href="index.html"><i class="far fa-home"></i></a><span>/</span><a href="tin-tuc.html">Tin tức</a><span>/</span><span>Chi tiết tin</span></div></div></div>',
         '<div class="container">',
         '<div class="ttb-news-detail-layout">',
         '<article class="ttb-news-article">',
@@ -1549,7 +1551,13 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('a[href]').forEach(function (link) {
         var href = link.getAttribute('href') || '';
         var newsContext = link.closest('[class*="news" i], [class*="tin-tuc" i], [class*="blog" i]');
-        if (newsContext || /trithuctrebooks\.com\/blogs\/|\/blogs\//i.test(href)) link.setAttribute('href', 'chi-tiet-tin.html');
+        var label = (link.textContent || '').replace(/\s+/g, ' ').trim();
+        var isViewAll = /xem\s+(?:tất\s*cả|toàn\s*bộ)/i.test(label);
+        if (isViewAll && newsContext) {
+            link.setAttribute('href', 'tin-tuc.html');
+        } else if (newsContext || /trithuctrebooks\.com\/blogs\/|\/blogs\//i.test(href)) {
+            link.setAttribute('href', 'chi-tiet-tin.html');
+        }
     });
 });
 /* TTB_CART_ROUTE_NORMALIZER */
