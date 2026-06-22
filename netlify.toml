@@ -1,0 +1,6 @@
+# Ensure demo UI changes are visible after a normal browser refresh.
+# Netlify still invalidates CDN assets on each production deploy.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "no-cache, max-age=0, must-revalidate"
