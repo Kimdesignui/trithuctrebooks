@@ -1583,3 +1583,31 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   link.setAttribute('data-ttb-footer-compact', '');
   document.head.appendChild(link);
 })();
+
+
+/* TTB_AUTO_DEPLOY_REFRESH */
+/* Poll the small deployment manifest so an open demo tab refreshes itself after a new deploy. */
+(function () {
+  if (window.location.protocol === 'file:') return;
+
+  var activeVersion = '';
+  var manifestUrl = window.location.origin + '/deploy-version.json';
+
+  function checkDeployVersion() {
+    fetch(manifestUrl + '?t=' + Date.now(), { cache: 'no-store', credentials: 'same-origin' })
+      .then(function (response) { return response.ok ? response.json() : null; })
+      .then(function (manifest) {
+        var nextVersion = manifest && manifest.version;
+        if (!nextVersion) return;
+        if (activeVersion && nextVersion !== activeVersion) window.location.reload();
+        activeVersion = nextVersion;
+      })
+      .catch(function () { /* Keep the static demo usable offline. */ });
+  }
+
+  checkDeployVersion();
+  window.setInterval(checkDeployVersion, 20000);
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) checkDeployVersion();
+  });
+})();
