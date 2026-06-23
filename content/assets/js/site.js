@@ -1611,3 +1611,23 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     if (!document.hidden) checkDeployVersion();
   });
 })();
+
+/* TTB_VIP_PACKAGE_POPUP_ONLY */
+(function(){
+  function ensurePopup(){
+    var existing=document.querySelector('.ttb-vip-popup');
+    if(existing) return existing;
+    var popup=document.createElement('div');
+    popup.className='ttb-vip-popup';
+    popup.setAttribute('aria-hidden','true');
+    popup.innerHTML=['<div class="ttb-vip-popup__backdrop" data-ttb-vip-close></div>','<section class="ttb-vip-popup__dialog" role="dialog" aria-modal="true" aria-labelledby="ttb-vip-popup-title">','<button class="ttb-vip-popup__close" type="button" aria-label="&#272;&#243;ng" data-ttb-vip-close><i class="far fa-times"></i></button>','<span class="ttb-vip-popup__eyebrow"><i class="fas fa-crown"></i> &#272;&#259;ng k&#253; g&#243;i &#273;&#7885;c &#273;i&#7879;n t&#7917;</span>','<h2 id="ttb-vip-popup-title">T&#237;nh n&#259;ng g&#243;i t&#224;i kho&#7843;n &#273;ang &#273;&#432;&#7907;c chu&#7849;n b&#7883;</h2>','<p>Button n&#224;y s&#7869; m&#7903; ra m&#7897;t trang landing page gi&#7899;i thi&#7879;u c&#225;c g&#243;i t&#224;i kho&#7843;n &#273;&#7885;c s&#225;ch &#273;i&#7879;n t&#7917; tr&#234;n h&#7879; th&#7889;ng trithuctrebooks.com.</p>','<div class="ttb-vip-popup__plans"><div class="ttb-vip-popup__plan"><strong>10 ng&#224;y</strong><span>40.000&#273;</span></div><div class="ttb-vip-popup__plan"><strong>1 th&#225;ng</strong><span>108.000&#273;</span></div><div class="ttb-vip-popup__plan"><strong>6 th&#225;ng</strong><span>540.000&#273;</span></div></div>','<p>Hi&#7879;n t&#7841;i &#273;&#226;y l&#224; th&#244;ng b&#225;o demo &#273;&#7875; kh&#225;ch h&#224;ng n&#7855;m &#273;&#432;&#7907;c lu&#7891;ng t&#237;nh n&#259;ng tr&#432;&#7899;c khi trang landing page &#273;&#432;&#7907;c ho&#224;n thi&#7879;n.</p>','<div class="ttb-vip-popup__actions"><button class="ttb-vip-popup__primary" type="button" data-ttb-vip-close>&#272;&#227; hi&#7875;u</button></div>','</section>'].join('');
+    document.body.appendChild(popup);
+    popup.addEventListener('click',function(event){if(event.target.closest('[data-ttb-vip-close]')) closePopup();});
+    document.addEventListener('keydown',function(event){if(event.key==='Escape') closePopup();});
+    return popup;
+  }
+  function openPopup(){var popup=ensurePopup();popup.classList.add('is-open');popup.setAttribute('aria-hidden','false');document.documentElement.classList.add('ttb-vip-popup-open');var close=popup.querySelector('.ttb-vip-popup__close');if(close) close.focus();}
+  function closePopup(){var popup=document.querySelector('.ttb-vip-popup');if(!popup) return;popup.classList.remove('is-open');popup.setAttribute('aria-hidden','true');document.documentElement.classList.remove('ttb-vip-popup-open');}
+  document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.ttb-header-package a,.ttb-header-package-mobile a').forEach(function(link){link.setAttribute('href','#');link.setAttribute('data-ttb-vip-package','');});if(window.location.hash==='#goi-doc-sach')setTimeout(openPopup,120);});
+  document.addEventListener('click',function(event){var link=event.target.closest('a[data-ttb-vip-package],.ttb-header-package a,.ttb-header-package-mobile a');if(!link)return;event.preventDefault();openPopup();},true);
+})();
